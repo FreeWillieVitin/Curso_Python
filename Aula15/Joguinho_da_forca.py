@@ -31,7 +31,7 @@ while True:
         else:
             temp = temp + '*'  # Se a letra nao for igual então recebe o *
 
-    if temp == segredo:  # Verifica se a variável temp tem armazenado a mesma palavra que a secreta, após as tentativas
+    if temp == segredo:  # Verifica se a variável temp armazena a mesma palavra que a secreta, após as tentativas
         print(f'QUe legal, você ganhou!!! A palavra era {temp}')  # Se o jogador acertou as letras, então parabéns
         break
     else:
