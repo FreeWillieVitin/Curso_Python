@@ -1,14 +1,18 @@
 # Exemplo de joguinho da forca, neste exemplo é usado uma lista para armazenar as letras existentes na palavra secreta
 # Abaixo estão definidas as variáveis principais do jogo como a palavra secreta, a variável para armazenar a lista
 # e a variável da quantidade de chances que o jogador tem.
-segredo = input("Digite uma palavra: ")
+import random
+
+l_palavras = ['keychain', 'baleia', 'coletivo', 'Massagem', 'Filho', 'Balão', 'Percentagem', 'costelas', 'Ombro',
+              'Borla']
+segredo = random.choice(l_palavras).lower()  # Seleciona uma palavra aleatória da lista
 digitos = []
 chance = 3
 
 
 while True:
     if chance == 0:  # Se o jogador errar 3 vezes e a variável chance chegar a 0 ele perde e encerra o jogo
-        print(f"Você perdeu!!, A palavra era {segredo}")  # Mostra mensagem da derrota e qual era a palavra correta
+        print(f"Você perdeu!! A palavra era {segredo}")  # Mostra mensagem da derrota e qual era a palavra correta
         break
 
     letra = input('Digite uma letra: ')  # Define a variável que vai pedir a tentativa de letra ao jogador
