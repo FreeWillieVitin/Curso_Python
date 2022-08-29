@@ -29,10 +29,20 @@ pi = 3.14
 print('O area do circulo é de {}'.format(pi * raio**2))
 
 # Faça um Programa que calcule a área de um quadrado, em seguida mostre o dobro desta área para o usuário.
+largura = float(input('Digite a largura do quadrado: '))
+dobro = largura ** 2 * 2
+print('A area do quadrado é de {}'.format(largura**2))
+print(dobro)
 
-#Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. Calcule e mostre o total do seu salário no referido mês.
-#Faça um Programa que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius.
-#C = 5 * ((F-32) / 9).
+# Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês.
+# Calcule e mostre o total do seu salário no referido mês.
+salario = float(input('Quanto você ganha por hora? '))
+hora = int(input('Quantas horas você trabalha? '))
+print('O seu salário é de {}'.format(salario * hora))
+
+# Faça um Programa que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius.
+# C = 5 * ((F-32) / 9).
+
 #Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Fahrenheit.
 #Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre:
 #o produto do dobro do primeiro com metade do segundo .
