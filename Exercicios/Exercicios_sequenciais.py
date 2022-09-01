@@ -42,13 +42,25 @@ print('O seu salário é de {}'.format(salario * hora))
 
 # Faça um Programa que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius.
 # C = 5 * ((F-32) / 9).
+f = int(input('Digite a temperatura em Fahrenheit: '))
+c = 5 * ((f-32) / 9)
+print('Sua temperatura em Celsius é de {}'.format(c))
 
-#Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Fahrenheit.
-#Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre:
-#o produto do dobro do primeiro com metade do segundo .
-#a soma do triplo do primeiro com o terceiro.
-#o terceiro elevado ao cubo.
-# Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal, usando a seguinte fórmula: (72.7*altura) - 58
+# Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Fahrenheit.
+c= int(input('Digite a temperatura em Celsius: '))
+f = (c * 1.8 + 32)
+print('Sua temperatura em Fahrenheit é de {}'.format(f))
+
+"""
+Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre:
+o produto do dobro do primeiro com metade do segundo .
+a soma do triplo do primeiro com o terceiro.
+o terceiro elevado ao cubo.
+"""
+
+# Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal,
+# usando a seguinte fórmula: (72.7*altura) - 58
+
 # Tendo como dado de entrada a altura (h) de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas:
 # Para homens: (72.7*h) - 58
 # Para mulheres: (62.1*h) - 44.7
