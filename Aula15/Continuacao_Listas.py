@@ -23,7 +23,7 @@ print(l1)
 print(max(l2))
 print(min(l2))
 
-for i in l3:
+for i in l2:
     soma = soma + i
     print(f'{soma} + {i} = {soma}')
 print(soma)

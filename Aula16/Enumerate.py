@@ -14,7 +14,7 @@ print(lista[2][1])  # print com index da lista, indica que retornará a terceira
 print(conta[1][1][2])  # Como temos uma lista dentro de outra é preciso identificar ela quando for selecionar para que
 # o sistema saiba qual você esta buscando por isso os parâmetros são desta forma [coluna],[qual lista], [valor da lista]
 
-for v1 in enumerate(lista, 10):
+for v1 in enumerate(lista):
     valor, lili = v1
     nome1, nome2, nome3 = lili
     print(v1)
