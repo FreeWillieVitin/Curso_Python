@@ -25,9 +25,9 @@ cpf = '111318679'
 
 for i in cpf:
     for x in lista1:
-    n = n + x
-    print(f'{soma} + {i} = {soma}')
-print(soma)
+        n = n + x
+        print(f'{x} + {i} = {i}')
+    print(i)
 
 
 
