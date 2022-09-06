@@ -16,18 +16,39 @@ CPF = 168.995.350-09
 11 > 9 = 0                   #
 Digito 1 = 0                 #    Digito 2 = 9
 """
-lista1 = [10, 9, 8, 7, 6, 5, 4, 3, 2]
-lista2 = [11, 10, 9, 8, 7, 6, 5, 4, 3]
-teste = []
+vl1 = 10
+vl2 = 11
 cpf_novo = []
 n = 0
-cpf = '111318679'
+cpf = '11131867980'
+li = list(cpf)
+soma = 0
+soma2 = 0
+cpf2 = cpf[:-2]
 
-for i in cpf:
-    for x in lista1:
-        n = n + x
-        print(f'{x} + {i} = {i}')
-    print(i)
+for i in cpf2:
+    te = int(i)
+    cal1 = te * vl1
+    soma = soma + cal1
+prox1 = 11 - (soma % 11)
+if prox1 > 9:
+    cpf_novo.append(0)
+else:
+    cpf_novo.append(prox1)
+print(soma)
+
+for x in cpf2:
+    te2 = int(x)
+    cal2 = te2 * vl2
+    soma2 = soma2 + cal2
+prox2 = 11 - (soma2 % 11)
+if prox2 > 9:
+    cpf_novo.append(0)
+else:
+    cpf_novo.append(prox2)
+print(soma2)
+
+print(cpf_novo)
 
 
 
