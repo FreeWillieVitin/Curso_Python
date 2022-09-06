@@ -16,42 +16,38 @@ CPF = 168.995.350-09
 11 > 9 = 0                   #
 Digito 1 = 0                 #    Digito 2 = 9
 """
-vl1 = 10
-vl2 = 11
 cpf_novo = []
-n = 0
-cpf = '11131867980'
-li = list(cpf)
+cpf = '116135049'
 soma = 0
 soma2 = 0
-cpf2 = cpf[:-2]
+dg1 = 0
+dg2 = 0
 
-for i in cpf2:
-    te = int(i)
-    cal1 = te * vl1
-    soma = soma + cal1
-prox1 = 11 - (soma % 11)
-if prox1 > 9:
+count = 10
+for i in range(0, len(cpf)-2):
+    soma = soma + (int(cpf[i])*count)
+    i+=1
+    count-=1
+dg1 = 11-(soma % 11)
+if dg1 >= 10:
     cpf_novo.append(0)
 else:
-    cpf_novo.append(prox1)
+    cpf_novo.append(dg1)
+# ---------------------------------------------------------------------
+count = 10
+for j in range(1, len(cpf)-1):
+    soma2 = soma2 + (int(cpf[j])*count)
+    j+=1
+    count-=1
+dg2 = 11-(soma2 % 11)
+if dg2 >= 10:
+    cpf_novo.append(0)
+else:
+    cpf_novo.append(dg2)
+
 print(soma)
-
-for x in cpf2:
-    te2 = int(x)
-    cal2 = te2 * vl2
-    soma2 = soma2 + cal2
-prox2 = 11 - (soma2 % 11)
-if prox2 > 9:
-    cpf_novo.append(0)
-else:
-    cpf_novo.append(prox2)
 print(soma2)
-
 print(cpf_novo)
-
-
-
 
 
 
