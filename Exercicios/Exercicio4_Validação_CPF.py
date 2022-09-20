@@ -16,10 +16,11 @@ CPF = 168.995.350-09
 11 > 9 = 0                   #
 Digito 1 = 0                 #    Digito 2 = 9
 """
+# Minha versão do exercício
 vl1 = 10
 vl2 = 10
 cpf_novo = []
-cpf = '11613504977'
+cpf = '16899535009'
 soma = 0
 soma2 = 0
 dg1 = 0
@@ -36,7 +37,7 @@ else:
     cpf_novo.append(dg1)
 
 for x in range(1, len(cpf)-1):
-    soma2 = soma2 + (int(x) * vl2)
+    soma2 = soma2 + (int(cpf[x]) * vl2)
     x += 1
     vl2 -= 1
 dg2 = 11 - (soma2 % 11)
@@ -47,3 +48,20 @@ else:
 print(soma)
 print(soma2)
 print(cpf_novo)
+
+"""
+Aqui ficará a versão do professor
+
+cpf = '16899535009'
+novo_cpf = cpf[:-2]
+reverso = 10
+
+for index in range(19):
+    if index > 8:
+        index -= 9
+        
+    reverso -= 1
+    if reverso < 2:
+        reverso = 11
+    
+"""
