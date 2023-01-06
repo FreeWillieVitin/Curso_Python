@@ -8,3 +8,7 @@ print('Linha 1')#Fora do padrão PEP8
 Comentário de mais de uma linha - é mais usado para docstrings ou documentação
 """
 print('Victor Hugo')
+
+'''
+testesdddd
+'''
