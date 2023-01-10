@@ -9,6 +9,4 @@ Comentário de mais de uma linha - é mais usado para docstrings ou documentaç�
 """
 print('Victor Hugo')
 
-'''
-testesdddd
-'''
+
