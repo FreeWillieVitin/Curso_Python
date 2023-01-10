@@ -1,16 +1,22 @@
 """
-String é um tipo primitivo
-str ou string é uma cadeia de caracteres (São textos interpretados pelo python em parênteses)
-
-python é uma linguagem de tipagem dinâmica
+Python = Linguagem de programação
+Tipo de tipagem = Dinâmica / Forte
+str -> string -> texto
+Strings são textos que estão dentro de aspas
 """
-
-print('string')
-print("string")
-print('123456 é uma string tbm')
 print(123456)  # Não é uma string
 
-# Se eu quiser usar aspas dentro de um texto eu preciso iniciar a string com aspas duplas
-# e se eu quiser usar aspas duplas eu preciso começar com aspas
-print('usando "aspas dupla no texto".')
-print("usando 'aspas simples no texto'.")
+# Aspas Simples
+print('string')
+print('123456 é uma string tbm') # Se estiver dentro das aspas o numero tambem é uma string
+print(1, 'Victor "Hugo"') # É possivel usar aspas duplas se voce iniciar a string com aspas simples
+
+# Aspas Duplas
+print("string")
+print(2, "Victor 'Hugo'") # Mesma coisa que na questão anterior
+
+# Escape
+print("Luiz \"Otávio\"") # Outra forma porém deixa o codigo muito sujo de usar aspas como strings
+
+# r
+print(r"Luiz \"Otávio\"") # Forma de usar o caracter de escape como string é usar o r antes das aspas
