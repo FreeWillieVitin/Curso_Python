@@ -8,6 +8,8 @@ bool - booleano/lógico - true/false
 Extra-------------
 Atalho para comentar várias linhas ao mesmo tempo
 ctrl + /
+
+Tudo em python é um objeto
 """
 
 print('Victor', type('Victor'))  # type mostra o tipo de dado da classe.
@@ -16,17 +18,8 @@ print(20.50, type(20.50))
 print(10 == 10, type(10 == 10))
 
 """
-Converter tipos, Coerção, type convertion, typecasting, coercion
-é o ato de converter um tipo em outro
-tipo imutavel e primitivo:
-str, int, float, bool
+Converter tipos
 """
-# print('1' + 1) # Esse valor retorna um erro, pois o numero que está em aspa nao é do mesmo tipo que o outro valor
-print('a' + 'b') # O resultado a ser retornado é concatenação dos valores, pois é possivel juntar strings
-print(int('1') + 1)  # Através da conversão, um numero em aspas pode ser somado, mas somente se for convertido para int
-print(float("1") + 1) # Mesmo o valor estando em aspas, ele sendo convertido em float é possivel realizar a
-
-
 print('Victor', type('Victor'), bool('Victor'))
 print('10', type('10'), type(int('10')))
 
