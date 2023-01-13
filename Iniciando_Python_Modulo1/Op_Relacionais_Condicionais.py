@@ -39,3 +39,17 @@ if idade >= idade_limite:
     print(f'{nome} é maior de idade')
 else:
     print(f'{nome} é menor de idade')
+
+# Exercício de comparação
+
+val_1 = input('Digite um valor: ')
+val_2 = input('Digite outro valor: ')
+
+if val_1 > val_2:
+    print(f'O primeiro valor {val_1} é maior que o segundo valor {val_2}')
+elif val_2 > val_1:
+    print(f'O segundo valor {val_2} é maior que o primeiro valor {val_1}')
+elif val_1 == val_2:
+    print('Os valores são iguais')
+else:
+    print('Valores inválidos')
