@@ -1,16 +1,32 @@
 """
-Formatar valores com modificadores.
+Formatar valores string com modificadores.
 
 :s - Texto (strings)
 :d - Inteiros (int)
 :f - Números de ponto flutuante (float)
+:valor(x ou X) - Número Hexadecimal
 :.(NÚMERO DE CASAS DECIMAIS)f - Quantidade de casas decimais (float)
 :(CARACTERE)(> ou < ou ^)(QUANTIDADE)(TIPO - s, d ou f)
+
+:= - Força o número a aparecer antes dos zeros
+Sinal - :+ ou :- Mostra o sinal na frente do numero conforme o seu sinal (positivo ou negativo)
+Ex.: 0>-100,.1f
 
 > - Esquerda
 < - Direita
 ^ - Centro
+
+Conversion flags - !r !s !a 
 """
+
+variavel = 'ABC'
+print(f'{variavel}') # Retorna o valor da variavel
+print(f'{variavel: >10}') # Retorna a variavel com 10 strings vazias a esquerda
+print(f'{variavel: <10}.') # Retorna a variavel com 10 strings vazias a direita
+print(f'{variavel: ^10}.') # Retona a variavel entre strings vazias
+print(f'{1000.4873648123746:0=+10,.1f}')
+print(f'O hexadecimal de 1500 é {1500:08X}')
+print(f'{variavel!r}')
 
 num1 = 10
 num2 = 3
