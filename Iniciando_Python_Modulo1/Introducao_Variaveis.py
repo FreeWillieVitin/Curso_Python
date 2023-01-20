@@ -33,3 +33,9 @@ print('Idade:', idade),
 print('Ano de nascimento:', ano_nascimento)
 print('É maior de idade?', e_maior)
 print('Altura em metros:', altura)
+
+"""
+CONSTANTE = "Variaveis" que não vai mudar
+Muitas condições no mesmo if (ruim)
+    <- Contagem de complexidade (ruim)
+"""
