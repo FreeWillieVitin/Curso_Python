@@ -18,3 +18,5 @@ print(fat)
 # Pular caracteres
 print(texto[0:6:2]) # 0 = começo, 6 = até onde vai, 2 = de quantos em quantos caracteres ele vai pular
 print(len(url))
+
+

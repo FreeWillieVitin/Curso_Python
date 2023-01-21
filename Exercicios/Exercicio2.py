@@ -10,10 +10,10 @@ else:
     print(f"{num1} Não é um número inteiro")
     exit()
 
-    if num1 % 2 == 0:
-        print(f"{num1} é um número par")
-    else:
-        print(f"{num1} é um número ímpar")
+if num1 % 2 == 0:
+    print(f"{num1} é um número par")
+else:
+    print(f"{num1} é um número ímpar")
 
 """
 Faça um programa que pergunte a hora ao usuario e, baseando-se no horario descrito, exiba a saudação apropriada.
@@ -50,7 +50,7 @@ nome = input("Digite o seu nome: ")
 if len(nome) <= 4:
     print(f"{nome} é um nome curto.")
 
-if 4 < len(nome) < 7:
+elif 4 < len(nome) < 7:
     print(f"{nome} é um nome normal.")
 
 elif len(nome) > 6:
