@@ -11,6 +11,32 @@ Ex: a = a + 1 -> pode ser substituido por a += 1
 """
 # -------------------------------------------------------------------------------------------------------------------------
 x = 0
+while x < 10:
+    if x == 3:
+        x = x + 1
+        break  # Quando o loop alcança um valor desejado, o break faz com que aquele loop se encerre
+
+    print(x)
+    x = x + 1
+
+print('Acabou')
+
+# -------------------------------------------------------------------------------------------------------------------------
+x = 0 # Variável de valor 0
+
+while x < 10: # Enquanto a variável for menor que 10
+    x += 1 # Soma mais 1 a variável
+
+    if x == 3: # Quando a soma chegar em 3
+        print('Não vou mostrar o 3') # Será exibido essa mensagem na tela
+        continue  # Então o continue pulará a exibição do valor 3 porém não vai parar a execução, seguirá normalmente até o fim 
+
+    print(x) # Exibe cada novo valor do laço
+
+print('Acabou') # Quando chegar no 10 termina a execução com essa mensagem
+
+# -------------------------------------------------------------------------------------------------------------------------
+x = 0
 while x <= 100:  # Laço que verifica se o x é menor que 100, se ele for menor ele soma mais 1
     print(x)
     x += 1
@@ -25,28 +51,6 @@ while True:  # Cria um laço infinito
 
 # Debuggar é testar linha por linha do código
 
-x = 0
-while x < 10:
-    if x == 3:
-        x = x + 1
-        continue  # Ignora uma parte do ‘loop’ criado pelo while, mas não para a execução dele, continua com o resto do
-# o resto do loop
-
-    print(x)
-    x = x + 1
-
-print('Acabou')
-
-x = 0
-while x < 10:
-    if x == 3:
-        x = x + 1
-        break  # Quando o loop alcança um valor desejado, o break faz com que aquele loop se encerre
-
-    print(x)
-    x = x + 1
-
-print('Acabou')
 
 x = 0
 
