@@ -11,6 +11,18 @@ Ex: a = a + 1 -> pode ser substituido por a += 1
 """
 # -------------------------------------------------------------------------------------------------------------------------
 x = 0
+y = 0
+
+while x < 10:
+    while y <= 5:
+        print(f'X vale {x} e Y vale {y}')
+        y += 1  
+    x += 1  # x = x + 1
+
+print('Acabou!')
+
+# -------------------------------------------------------------------------------------------------------------------------
+x = 0
 while x < 10:
     if x == 3:
         x = x + 1
@@ -52,18 +64,7 @@ while True:  # Cria um laço infinito
 # Debuggar é testar linha por linha do código
 
 
-x = 0
 
-while x < 10:
-    y = 0
-
-    while y < 5:
-        print(f'X vale {x} e Y vale {y}')
-        y += 1
-
-    x += 1  # x = x + 1
-
-print('Acabou!')
 
 while True:
     print()
