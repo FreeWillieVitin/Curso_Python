@@ -10,14 +10,13 @@ Não é necessario repetir a variavel para realizar operações
 Ex: a = a + 1 -> pode ser substituido por a += 1
 """
 # -------------------------------------------------------------------------------------------------------------------------
-x = 0
-y = 0
-
-while x < 10:
-    while y <= 5:
-        print(f'X vale {x} e Y vale {y}')
-        y += 1  
-    x += 1  # x = x + 1
+x = 1 # Define a primeira variavel
+while x <= 5: # Enquanto o valor de x for menor que 5 a operação se repetirá
+    y = 1 # Define a variavel y e reseta ela quando o proximo laço chegar ao fim
+    while y <= 5: # Enquanto o valor de y for menor que 5 a operação se repetirá
+        print(f'{x= } {y= } ') # Mostra em tela os valores de suas repetições
+        y += 1 # Soma mais 1 a variavel y até q ela chegue ao valor de 5
+    x += 1  # Soma mais 1 a variavel x até que ela chegue ao valor de 5
 
 print('Acabou!')
 
