@@ -62,9 +62,6 @@ while True:  # Cria um laço infinito
 
 # Debuggar é testar linha por linha do código
 
-
-
-
 while True:
     print()
     n1 = input('Digite um numero: ')
