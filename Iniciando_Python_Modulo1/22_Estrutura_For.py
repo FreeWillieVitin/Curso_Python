@@ -2,7 +2,10 @@
 For in em python
 Iterando strings com o for
 Função range(start=0, stop, step=1)
-
+Iterável -> str, range, etc (__iter__)
+Iterador -> quem sabe entregar um valor por vez
+next -> me entregue o proximo valor
+iter -> me entregue seu iterador
 
 """
 texto = 'Python'
@@ -27,6 +30,11 @@ for n, letra in enumerate(texto):
 # contagem dos numeros do 5 até o 10 pulando de 1 em 1, valores esses que podem ser alterados como desejar
 for n in range(5, 10, 1):
     print(n)
+
+numeros = range(0, 100, 8)
+
+for num in numeros:
+    print(numeros)
 
 # Mesmo caso de uso de uma função range, mas dessa vez foi passado apenas um parametro, que indica que a operação a ser
 # realizada é de mostrar apenas multiplicados por 8 até o numero limite 100
