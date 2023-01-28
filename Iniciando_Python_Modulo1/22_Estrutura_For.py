@@ -6,8 +6,26 @@ Iterável -> str, range, etc (__iter__)
 Iterador -> quem sabe entregar um valor por vez
 next -> me entregue o proximo valor
 iter -> me entregue seu iterador
-
+metodo -> Uma ação chamada dentro do objeto
 """
+# ------------------------------------------------------------------------------------------------------------------------- 
+palavra = iter('Victor') # Aqui conhecemos a função iter, ela é a responsavel por identificar a posição de um objeto iteravel na memoria
+print(palavra) # Executado apenas dessa forma o print retornará apenas a descrição da posição onde essa string está alocada na memoria
+
+print(palavra.__next__()) # Aqui conheçemos o metodo next, ele é a demonstração de como o laço for funciona por de tras
+print(palavra.__next__()) # dos panos, pois ele indica ao iterador do python cada indice do objeto iteravel, então no caso
+print(palavra.__next__()) # cada vez que é executado, uma letra da string será printada, e é assim com qualquer objeto iteravel
+print(palavra.__next__()) 
+print(palavra.__next__())
+print(palavra.__next__())
+
+while True: # Enquanto o laço for verdadeiro
+    try: # Tente
+        print(next(palavra)) # Mostrar em tela cada indice do objeto iteravel
+    except StopIteration: # É tratado o erro StopIteration, que é o erro mostrado quando os iteração chegou ao fim
+        break # O erro é tratado com um break no laço
+
+# -------------------------------------------------------------------------------------------------------------------------
 texto = 'Python'
 nova = ''
 # c = 0
@@ -21,6 +39,7 @@ for letra in texto:
     print(letra)
 print(nova)
 
+# -------------------------------------------------------------------------------------------------------------------------
 # Aqui é definido duas variaveis, uma para que ira receber o texto e a outra numeros ordenadores atraves do enumerate
 for n, letra in enumerate(texto):
     print(n, letra)
