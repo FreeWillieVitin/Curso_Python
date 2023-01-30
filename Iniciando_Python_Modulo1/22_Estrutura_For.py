@@ -44,6 +44,7 @@ print(nova)
 for n, letra in enumerate(texto):
     print(n, letra)
 
+# -------------------------------------------------------------------------------------------------------------------------
 # No laço a seguir conhecemos o range que basicamente define um alcance, para o funcionamento deve ser definido
 # parametros que seguem a seguinte ordem: Função range(start=0, stop, step=1), no caso o compilador vai realizar uma
 # contagem dos numeros do 5 até o 10 pulando de 1 em 1, valores esses que podem ser alterados como desejar
@@ -55,12 +56,14 @@ numeros = range(0, 100, 8)
 for num in numeros:
     print(numeros)
 
+# -------------------------------------------------------------------------------------------------------------------------
 # Mesmo caso de uso de uma função range, mas dessa vez foi passado apenas um parametro, que indica que a operação a ser
 # realizada é de mostrar apenas multiplicados por 8 até o numero limite 100
 for n in range(100):
     if n % 8 == 0:
         print(n)
 
+# -------------------------------------------------------------------------------------------------------------------------
 # aqui é mais um exemplo de uso de for, mas agora com o uso de condicionais dentro do laço
 for letra in texto:
     if letra == 't':
@@ -69,3 +72,19 @@ for letra in texto:
         nova += letra.upper()
     else:
         nova += letra
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Da mesma forma que no while, no laço for tambem podemos usar continuem break e else, realizando as mesmas funçoes
+for i in range(10):
+    if i == 2:
+        print('i é 2, pulando...')
+        continue
+
+    if i == 8:
+        print('i é 8, seu else não executará')
+        break
+
+    for j in range(1, 3):
+        print(i, j)
+else:
+    print('For completo com sucesso!')
