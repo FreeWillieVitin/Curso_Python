@@ -46,8 +46,10 @@ l2 = [4, 5, 6]
 
 # Concatenar lista
 l3 = l1 + l2
+
 # podemos concatenar listas atraves da função extend que é descrita dessa forma: variavel.extend(varivel a ser juntada)
-# ou usar variavel.extend(um valor que queira concatenar ex: uma string qualquer)
+# ou usar variavel.extend(um valor que queira concatenar ex: uma string qualquer), diferente do sinal de +, o extend aplica a ação diretamente na variavel
+# não sendo necessaria a craição e outra variavel para a concatenação, pois o metodo extend é do tipo None e não retornaria nada
 l1.extend(l2)
 
 # A função append insere um valor na ultima linha da lista
@@ -69,3 +71,43 @@ print(l2)
 
 print(l1)
 print(l3)
+
+"""
+Cuidados com dados mutáveis
+= - (imutáveis)
+Os objetos do tipo int, float, string, bool sao imutaveis. Isto
+significa que objetos deste tipo nao podem ter seus valores alterados.
+Cada objeto criado esta em uma posicao de memoria e possui um
+identificador unico que pode ser obtido com a funcao id()
+
+= (imutáveis)
+"""
+# Exemplo de dado imutável
+# A variavel a está associada com o objeto int de valor 94, que possui o identificador 2399522393232
+a = 94
+id(a) # 2399522393232
+
+# Como um int e imutavel quando fazemos o incremento da variavel a, o que ocorre na verdade e a criacao de um novo objeto do tipo int que sera associado com a.
+
+a += 1
+a
+id(a) # 1446056889520, percebemos que mesmo a variavel sendo a mesma, por ter um valor diferente o seu id é alterado, não podendo ser atribuido o mesmo id que o anterior
+
+# Objetos do tipo list sao mutaveis (veremos outros tipos mutaveis posteriormente no curso). Isto significa que objetos deste tipo podem ter seus valores alterados.
+
+b = []
+id(b) # 2270716744448
+
+b.append(1)
+b
+id(b) # 2270716744448
+
+b += [2]
+b
+id(b) # 2270716744448
+
+b = [1,2]
+id(b) # 2270717295488
+
+# No exemplo acima note que a variavel b fica associada com a mesma lista de identificador 2270716744448, exceto na ultima atribuicao.
+# Na ultima atribuicao é criada uma nova lista e esta é associada com b.
