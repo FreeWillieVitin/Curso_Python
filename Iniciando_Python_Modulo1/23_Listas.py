@@ -111,3 +111,26 @@ id(b) # 2270717295488
 
 # No exemplo acima note que a variavel b fica associada com a mesma lista de identificador 2270716744448, exceto na ultima atribuicao.
 # Na ultima atribuicao é criada uma nova lista e esta é associada com b.
+
+"""
+for in com listas - Da mesma forma que podemos iterar uma strig
+podemos iterar uma lista tambem usando o for in
+"""
+
+l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+l2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+l4 = ['victor', 1, 1.1, True]
+soma = 0
+lista = ['Victor', 'Marieli', 'Jorge']
+
+for nome in lista:
+    print(nome, type(nome))
+
+for i in l2:
+    soma = soma + i
+    print(f'{soma} + {i} = {soma}')
+print(soma)
+
+for a in l4:
+    print(f'O tipo do {a} é {type(a)}')
+
