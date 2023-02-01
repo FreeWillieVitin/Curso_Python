@@ -134,3 +134,15 @@ print(soma)
 for a in l4:
     print(f'O tipo do {a} é {type(a)}')
 
+"""
+Exercicio
+Exiba os índices da lista
+0 Maria
+1 Helena
+2 Luiz
+"""
+
+exercicio = ['Maria', 'Helena', 'Luiz'] # Lista com os nomes
+
+for num in range(0,3): # Armazena em uma variavel um range
+    print(num, exercicio[num]) # Usa o range passado na variavel num como indice para os itens da lista
