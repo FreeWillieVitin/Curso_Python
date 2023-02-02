@@ -27,3 +27,10 @@ print('Nome: Victor', type('Victor'))
 print('Sua Idade: ', 24, type(24))
 print('Sua Altura: ', 1.74, type(1.74))
 print(24 > 18, type(24 > 18))
+
+"""
+Imprecisão de ponto flutuante
+Double-precision floating-point format IEEE 754
+https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+https://docs.python.org/pt-br/3/tutorial/floatingpoint.html
+"""
