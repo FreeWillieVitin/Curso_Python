@@ -1,8 +1,9 @@
 """
 Operador ternario em Python
 Forma de reduzir codigos
+<valor> if <condicao> else <outro valor>
 """
-
+# Aqui temos uma condicional padrão, se for verdadeiro exibe a primeira condição, senão a segunda (nada de novo).
 logged = True
 
 if logged:
@@ -12,10 +13,15 @@ else:
 
 print(msg)
 
+# Aqui temos um operador ternário, que faz exatamente a mesma coisa que acima, porém poupando linhas de código
+# e deixando tudo mais organizado
 user = True
 msg = 'Usuário logado' if user else 'Usuário não logado'
 print(msg)
 
+"""
+Um exemplo mais completo, usando condição padrão e operador ternário
+"""
 idade = input('Qual a sua idade? ')
 if not idade.isnumeric():
     print('Valor não aceito')

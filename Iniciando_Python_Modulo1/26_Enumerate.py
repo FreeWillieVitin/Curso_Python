@@ -14,6 +14,10 @@ lista2 = [
     ['Luiz', 'João', 'Eduarda', (0, 10, 20, 30, 40)]
 ]
 
+print(lista2[0][1])
+print(lista2[2][2])
+print(lista2[2][3][2])
+
 conta = list(enumerate(lista))  # Variável que salva a lista para enumeração, para isso é necessário usar o construtor
 # list que transforma a variável em uma lista
 print(conta)
@@ -27,9 +31,7 @@ for v1 in enumerate(lista):
     print(v1)
     print(nome1, nome2,nome3)
 
-print(lista2[0][1])
-print(lista2[2][2])
-print(lista2[2][3][2])
+
 
 
 
