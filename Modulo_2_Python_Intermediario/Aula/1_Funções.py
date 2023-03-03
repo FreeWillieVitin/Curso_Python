@@ -44,3 +44,13 @@ enviado para o parâmetro, o valor padrão será
 usado.
 Refatorar: editar o seu código.
 """
+def somar(x, y, z=None):
+    if z is not None:
+        print(f'{x=} {y=} {z=}', x + y + z)
+    else:
+        print(f'{x=} {y=}', x + y)
+
+somar(1, 2)
+somar(3, 5)
+somar(100, 200)
+somar(z=0, x=8, y=3)
