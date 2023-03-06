@@ -13,11 +13,20 @@ def multi(*args):
         print('Total', result)
     return result
 
-vezes = multi(2,3,4,5,6,78,9)
+vezes = multi(2,3,4,5)
 print(vezes)
 
 
 # Crie uma função fala se um numero é par ou ímpar.
 # Retorne se o número é par ou ímpar
 
-def par_impar()
+def par_impar(x):
+    if x % 2 == 0:
+        return (f"{x} é um número par")
+    else:
+        return (f"{x} é um número ímpar")
+    
+ret = par_impar(int(input('Digite um numero: ')))
+print(ret)
+
+
