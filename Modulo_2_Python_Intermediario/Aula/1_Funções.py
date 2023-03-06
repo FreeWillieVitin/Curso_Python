@@ -44,10 +44,10 @@ enviado para o parâmetro, o valor padrão será
 usado.
 Refatorar: editar o seu código.
 """
-def somar(x, y, z=None):
-    if z is not None:
+def somar(x, y, z=None): # Definindo um variável com 3 parametros sendo um com valor padrão none, importante usar valor padrão none para realizar checagens como abaixo
+    if z is not None: # No caso se for passado um valor de parametro para z, então será realizado o calculo com os 3 valores
         print(f'{x=} {y=} {z=}', x + y + z)
-    else:
+    else: # Caso nao seja passado nenhum valor, então z continuará sob o tipo none e e nao será incluido no calculo
         print(f'{x=} {y=}', x + y)
 
 somar(1, 2)
