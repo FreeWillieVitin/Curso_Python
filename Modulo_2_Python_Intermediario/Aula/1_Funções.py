@@ -54,3 +54,17 @@ somar(1, 2)
 somar(3, 5)
 somar(100, 200)
 somar(z=0, x=8, y=3)
+
+"""
+Higher Order Functions
+Funções de primeira classe
+Podemos Atribuir uma função como argumento para execução de outra função
+"""
+def saudacao(msg, nome):
+    return f'{msg}, {nome}!'
+
+def executa(funcao, *args):
+    return funcao(*args)
+
+v = executa(saudacao, 'Bom dia', 'jorge')
+print(v)
