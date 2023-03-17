@@ -17,3 +17,36 @@ perguntas = [
         'Resposta': '5',
     },
 ]
+
+
+def questoes():
+    contador_acerto = 0
+    for pergunta in perguntas:
+        print('Pergunta: ',pergunta['Pergunta'])
+    
+        opcoes = pergunta['Opções']
+
+        for x, y in enumerate(opcoes):
+            print(f'{x})', y)
+    
+        confirma = input('Digite uma alternativa: ')
+
+        confirma_int = None
+
+        if confirma.isdigit():
+            confirma_int = int(confirma)
+
+        if opcoes[confirma_int] == pergunta['Resposta']:
+            contador_acerto += 1
+            print('Voce acertou')
+        else:
+            print('Você errou')
+
+    print(contador_acerto)
+        
+                    
+questoes()
+
+
+
+
