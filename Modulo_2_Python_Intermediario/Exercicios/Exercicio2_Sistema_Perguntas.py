@@ -43,8 +43,7 @@ def questoes():
             print('Você errou')
 
     print(contador_acerto)
-        
-                    
+                        
 questoes()
 
 
