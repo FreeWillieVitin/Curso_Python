@@ -17,7 +17,7 @@ print(s1, type(s1))
  de iteráveis.
  - Seus valores serão sempre únicos;
  - Não aceitam valores mutáveis;
- - não tem índexes;
+ - não tem índices;
  - não garantem ordem;
  - são iteráveis (for, in, not in)
 """

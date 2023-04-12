@@ -9,8 +9,12 @@ iter -> me entregue seu iterador
 metodo -> Uma ação chamada dentro do objeto
 """
 # ------------------------------------------------------------------------------------------------------------------------- 
+import sys
+
 palavra = iter('Victor') # Aqui conhecemos a função iter, ela é a responsavel por identificar a posição de um objeto iteravel na memoria
 print(palavra) # Executado apenas dessa forma o print retornará apenas a descrição da posição onde essa string está alocada na memoria
+
+print()
 
 print(palavra.__next__()) # Aqui conheçemos o metodo next, ele é a demonstração de como o laço for funciona por de tras
 print(palavra.__next__()) # dos panos, pois ele indica ao iterador do python cada indice do objeto iteravel, então no caso
@@ -19,12 +23,31 @@ print(palavra.__next__())
 print(palavra.__next__())
 print(palavra.__next__())
 
+print()
+
 while True: # Enquanto o laço for verdadeiro
     try: # Tente
         print(next(palavra)) # Mostrar em tela cada indice do objeto iteravel
     except StopIteration: # É tratado o erro StopIteration, que é o erro mostrado quando os iteração chegou ao fim
         break # O erro é tratado com um break no laço
 
+# Generator expression
+lista = [n for n in range(1000)]
+Generator = (n for n in range(1000))
+
+print(sys.getsizeof(lista))
+print()
+print(lista)
+print()
+print(sys.getsizeof(Generator))
+print()
+print(Generator)
+print()
+print(next(Generator))
+print()
+# for n in Generator:
+#     print(n)
+# print()
 # -------------------------------------------------------------------------------------------------------------------------
 texto = 'Python'
 nova = ''
