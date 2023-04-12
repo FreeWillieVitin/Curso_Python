@@ -24,4 +24,27 @@ lista_de_listas_de_inteiros = [
     [4, 7, 6, 5, 2, 9, 2, 1, 2, 1],
     [5, 3, 1, 8, 5, 7, 1, 8, 8, 7],
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [8, 6, 5, 1, 3, 6, 2, 8, 9, 3],
 ]
+
+def primeiro_duplicado(lista):
+    duplicados = set()
+    num_duplicado = -1
+
+    for numero in lista:
+        if numero in duplicados:
+            num_duplicado = numero
+            break
+
+        duplicados.add(numero)
+
+    if num_duplicado != -1:
+        return print(f'O número duplicado da {lista} é o {num_duplicado}')
+    else:
+        return print(f'A lista {lista} não tem valor duplicado seu valor é {num_duplicado}')
+
+    
+for lista in lista_de_listas_de_inteiros:
+    primeiro_duplicado(lista)
+
+    
