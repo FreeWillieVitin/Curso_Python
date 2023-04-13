@@ -31,23 +31,23 @@ while True: # Enquanto o laço for verdadeiro
     except StopIteration: # É tratado o erro StopIteration, que é o erro mostrado quando os iteração chegou ao fim
         break # O erro é tratado com um break no laço
 
-# Generator expression
-lista = [n for n in range(1000)]
-Generator = (n for n in range(1000))
+# Generator expression - É uma forma de iterar sobre algo mas sem executar toda a iteração de uma vez, mas sim de forma pausadamente poupando uso de memória
+lista = [n for n in range(1000)] # Aqui temos uma lista composta por um list comprehension, uma lista quando criada automaticamente passa a ocupar o seu valor inteiro na memória, pois armazena tudo de uma vez
+Generator = (n for n in range(1000)) # O contrário acontece com um generator, pois ele itera apenas o primeiro valor e espera a sua proxima chamada(next()) para continuar sua iteração
 
-print(sys.getsizeof(lista))
-print()
+print(sys.getsizeof(lista)) # Função getsizeof mostra quanto ocupa determinada coisa na memória, no caso está apontando para a lista, assim podemos observar que uma lista ocupa o seu espaço total na memória
+print() # Pois ela é ja está com todos os seus valores á preenchendo
 print(lista)
 print()
-print(sys.getsizeof(Generator))
+print(sys.getsizeof(Generator)) # Já um generator ocupa um valor fixo na memória, pois ele itera sobre um valor apenas e mesmo que ele tenha outros para iterar, pois aguarda a sua ação next ser chamada
+print() # Desta forma sempre terá o mesmo valor, porém não temos indices em um generator sendo assim seus valores são imutáveis
+print(Generator) # Executa o generator e exibe apenas o valor 0 esperando a sua proxima chamada
 print()
-print(Generator)
-print()
-print(next(Generator))
+print(next(Generator)) # Generator sendo chamado novamente, agora sim exibira o valor 1, mas continuará tendo o mesmo valor em memoria
 print()
 # for n in Generator:
-#     print(n)
-# print()
+#     print(n) # Aqui iteramos o generator, fazendo assim com que ele execute todos os valores de uma vez, mas é retornado de forma diferente da lista que mostra toda ela de uma vez só 
+# print() # Aqui cada valor é exibido por vez pulando-se uma linha como se fosse algum algoritmo em looping
 # -------------------------------------------------------------------------------------------------------------------------
 texto = 'Python'
 nova = ''
