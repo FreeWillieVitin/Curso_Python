@@ -1,0 +1,2 @@
+def fala():
+    print('Oi')
