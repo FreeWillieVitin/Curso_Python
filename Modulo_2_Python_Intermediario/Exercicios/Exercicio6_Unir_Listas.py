@@ -8,3 +8,23 @@
 # ['BA', 'SP', 'MG', 'RJ']
 # Resultado
 # [('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')]
+
+cidades = [
+    'Salvador',
+    'Ubatuba',
+    'Belo Horizonte',
+]
+
+Estados = [
+    'BA',
+    'SP',
+    'MG',
+    'RJ',
+]
+
+def unir():
+    for x, y in cidades, Estados:
+        combina += x + y
+        print(combina)
+    return unir
+unir()
