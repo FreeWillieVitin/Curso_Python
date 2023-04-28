@@ -1,5 +1,7 @@
 """
 groupby - agrupando valores(itertools)
+
+Para um agrupamento acontecer eles devem estar ordenados. Ex: a,a,a,b,a (Por estar fora da ordem o ultimo a não seria agrupado com o restante)
 """
 from itertools import groupby
 
@@ -14,16 +16,16 @@ alunos = [
     {'nome': 'André', 'nota': 'A'},
     {'nome': 'Anderson', 'nota': 'C'},
 ]
-alunos_agrupados = sorted(alunos, key=lambda a: a['nota'])
+def ordena(aluno):
+    return aluno['nota']
 
-for aluno in alunos_agrupados:
-    print(aluno)
+alunos_agrupados = sorted(alunos, key=ordena)
+grupos1 = groupby(alunos_agrupados, key=ordena)
 
-# grupos1 = groupby(alunos)
-
-# for chave, grupo in grupos1:
-#     print(chave)
-#     print(list(grupo))
+for chave, grupo in grupos1:
+    print(chave)
+    for a in grupo:
+        print(a)
 
 print()
 letras = ['a','a','a','a', 'b', 'c','a']
