@@ -3,7 +3,7 @@ map - para mapear dados
 """
 from functools import partial
 from types import GeneratorType
-# map - para mapear dados
+
 def print_iter(iterator):
     print(*list(iterator), sep='\n')
     print()

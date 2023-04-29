@@ -1,4 +1,4 @@
-# reduce - faz a redução de im iterável em um único valor
+# reduce - faz a redução de um iterável em um único valor
 from functools import reduce
 
 produtos = [
@@ -9,15 +9,18 @@ produtos = [
     {'nome': 'Produto 4', 'preco': 69.90},
 ]
 def funcao_do_reduce(acumulador, produto):
-    
     print(acumulador)
-    return 1
+    print(produto)
+    print()
+    return acumulador + produto['preco']
 
 total = reduce(
     funcao_do_reduce,
     produtos,
     0
 )
+
+print('Total é ', round(total,2))
 
 
 
