@@ -10,3 +10,33 @@
     ambiente virtual, mas os mais comuns são:
     venv env .venv .env
 """
+
+# python -m venv venv - esse é o comando no powersheel para criação de um ambiente virtual (O nome da venv é o segundo, pode ser qualquer nome)
+# gcm python - Localiza o caminho de instalação do python ou de qualquer arquivo que for passado após o gcm
+# gcm python -Syntax - Mostra apenas o caminho, não traz outras informações
+# No linux ou IOS o comando a cima é executado por which python
+# Esse é o caminho do python global no computador do meu trabalho C:\Users\HSVP\AppData\Local\Programs\Python\Python311\python.exe
+
+"""
+Como Ativar o ambiente virtual no windows
+"""
+# NomeDoAmbienteVirtual\Scripts\activate
+
+"""
+Como Ativar o ambiente virtual no Linux
+Qualquer um dos modos abaixo executa
+"""
+# . NomeDoAmbienteVirtual/bin/activate
+# source NomeDoAmbienteVirtual/bin/activate
+
+"""
+Instalar ou desinstalar pacotes e bibliotecas
+"""
+# Para instalar pacotes que não vem com o python, usamos o comando pip install NomeDoPacoteOuBiblioteca
+# E o pip uninstall NomeDoPacoteOuBiblioteca para desinstalar
+
+"""
+Listar pacotes instalados
+"""
+# pip freeze - Exibe todos os pacotes instalados
+
