@@ -42,3 +42,4 @@ Listar pacotes instalados
 # Esse requirements.txt serve como um instalador de pacotes padrão, quando for criado uma venv nova para nao ter que ficar instalando pacote por pacote
 # Executamos o requirements e tudo o que estiver especificado nele será instalado
 # Comando para criar o requirements.txt - pip freeze > NomeDoArquivo.txt
+# E para instalar os pacotes e bibliotecas do requirements - pip install -r NomeDoArquivo.txt
