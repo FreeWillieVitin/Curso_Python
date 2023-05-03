@@ -38,5 +38,7 @@ Instalar ou desinstalar pacotes e bibliotecas
 """
 Listar pacotes instalados
 """
-# pip freeze - Exibe todos os pacotes instalados
-
+# pip freeze - Exibe todos os pacotes instalados, o pip freeze também é utlizado para criar um arquivo requirements.txt, 
+# Esse requirements.txt serve como um instalador de pacotes padrão, quando for criado uma venv nova para nao ter que ficar instalando pacote por pacote
+# Executamos o requirements e tudo o que estiver especificado nele será instalado
+# Comando para criar o requirements.txt - pip freeze > NomeDoArquivo.txt
