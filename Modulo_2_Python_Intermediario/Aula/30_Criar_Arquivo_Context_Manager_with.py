@@ -20,6 +20,7 @@ Vamos falar mais sobre o módulo json, mas:
 json.dump = Gera um arquivo json
 json.load
 """
+import os
 # Se não especificar o caminho, o arquivo vai ser criado na pasta em que o módulo está
 caminho = 'arquivo_da_aula_30_modulo_2.txt'
 
@@ -50,6 +51,7 @@ with open(caminho_arquivo, 'r') as arquivo:
 print('#' * 40)
 
 with open(caminho_arquivo, 'w+') as arquivo:
+    print(type(arquivo))
     arquivo.write('Linha 1')
     arquivo.write('Linha 1\n')
     arquivo.write('Linha 2\n')
@@ -63,11 +65,21 @@ with open(caminho_arquivo, 'w+') as arquivo:
     print(arquivo.readline())
     print(arquivo.readline())
     print(arquivo.readline())
-
-with open(caminho_arquivo2, 'a') as arquivo:
+"""
+Encode: Formato padrão de codificação de caracteres, o windows usa como padrão o formato windows-1252, com isso alguns imprevistos podem acontecer
+com os textos que usam acentos ou ç, para corrigir esses problemas, quando criamos um arquivo, damos mais um parametro alem do caminho e o modo
+passamos o parametro encoding='O tipo de codificação, normalmente a mais usada é a utf8'
+"""
+with open(caminho_arquivo2, 'a', encoding='utf8') as arquivo: # Modo de abertura a, nao limpará o texto ja existe no arquivo e sim reescrever abaixo
     arquivo.write('Linha 1')
     arquivo.write('Linha 1\n')
     arquivo.write('Linha 2\n')
     arquivo.write('Atenção\n')
 
 # with open(caminho_arquivo, 'b') as arquivo:
+
+# os.unlink(caminho_arquivo) # Exclui os arquivos passado no parametro
+# os.remove(caminho_arquivo)
+
+os.rename(caminho_arquivo, 'Arquivo Renomeado') # Renomeia o arquivo
+

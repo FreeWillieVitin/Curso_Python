@@ -1,0 +1,5 @@
+[
+    {"name": "Victor", "lastname": "Hugo", "age": 25, "addresses": [{"line1":"AV. Brasil"}, {"line2":"Rua. Portão"}]},
+    {"name": "Marieli", "lastname": "Stankievski", "age": 24},
+    {"name": "Luiz", "lastname": "Carlos", "age": 51}
+]
