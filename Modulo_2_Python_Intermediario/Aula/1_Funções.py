@@ -68,3 +68,28 @@ def executa(funcao, *args):
 
 v = executa(saudacao, 'Bom dia', 'jorge')
 print(v)
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+Problema dos parâmetros mutáveis em funções Python
+"""
+def adiciona_clientes(nome, lista=None):
+    if lista is None:
+        lista = []
+    lista.append(nome)
+    return lista
+
+cliente1 = adiciona_clientes('Victor')
+adiciona_clientes('Marieli', cliente1)
+adiciona_clientes('Judite', cliente1)
+cliente1.append('Lolo')
+    
+cliente2 = adiciona_clientes('Catchau')
+adiciona_clientes('Abublé', cliente2)
+    
+cliente3 = adiciona_clientes('tibum')
+adiciona_clientes('randandan', cliente3)
+
+print(cliente1)
+print(cliente2)
+print(cliente3)
