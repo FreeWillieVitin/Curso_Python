@@ -11,25 +11,12 @@ class Carro:
         self.nome = nome
         self.cor = cor
 
-    def carregar_tarefas(self):
-        with open('Modulo_3_Introducao_Programacao_Orientada_Objeto\\Exercicios\\Exercicio_JSON\\classe.json', 'r', encoding='utf-8') as file:
-            arquivo = json.load(file)
-            p1 = Carro(**arquivo[0])
-            p2 = Carro(**arquivo[1])
-            p3 = Carro(**arquivo[2])
+with open('Modulo_3_Introducao_Programacao_Orientada_Objeto\\Exercicios\\Exercicio_JSON\\classe.json', 'r', encoding='utf-8') as file:
+    arquivo = json.load(file)
+    p1 = Carro(**arquivo[0])
+    p2 = Carro(**arquivo[1])
+    p3 = Carro(**arquivo[2])  
 
-
-         
-
-print(Carro)
-# for i in teste:
-#     car1 = Carro(**i)
-#     # car2 = vars(car1)
-#     print(vars(car1))
-#     print(car1.nome)
-
-
-
-
-# dados =  
-# Carro.carregar_tarefas(bd)
+print(p1.nome)
+print(p2.nome)
+print(p3.nome)
