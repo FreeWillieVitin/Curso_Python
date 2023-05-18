@@ -1,0 +1,30 @@
+[
+  {
+    "nome": "V\u00edctor",
+    "sobrenome": "Hugo",
+    "idade": 25,
+    "ativo": false,
+    "notas": [
+      "A",
+      "A+"
+    ],
+    "telefones": {
+      "residencial": "47 3642-2414",
+      "celular": "47 99292-6812"
+    }
+  },
+  {
+    "nome": "Luiz",
+    "sobrenome": "Carlos",
+    "idade": 51,
+    "ativo": true,
+    "notas": [
+      "B",
+      "A"
+    ],
+    "telefones": {
+      "residencial": "47 3642-2414",
+      "celular": "47 98402-7387"
+    }
+  }
+]

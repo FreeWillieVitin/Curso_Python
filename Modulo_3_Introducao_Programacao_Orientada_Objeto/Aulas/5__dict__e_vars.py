@@ -12,11 +12,15 @@ class Pessoa:
     def get_ano_nascimento(self): 
         return Pessoa.ano_atual - self.idade
     
+dados = {'idade': 25, 'outra': 'coisa'}
+
+    
 p1 = Pessoa('Victor', 25)
 print(p1.__dict__)
 print(vars(p1))
 p1.__dict__['outra'] = 'coisa'
 p1.__dict__['nome'] = 'EITA'
+del p1.nome
 print(p1.__dict__)
 print(vars(p1))
 print(p1.outra)
