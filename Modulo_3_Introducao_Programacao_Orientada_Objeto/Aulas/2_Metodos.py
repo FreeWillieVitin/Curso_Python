@@ -66,16 +66,62 @@ Métodos estáticos são métodos que estão dentro da classe,
 mas não tem acesso ao self nem ao cls.
 Em resumo, são funções que existem dentro da sua classe.
 """
-class Classe:
-    @staticmethod
-    def funcao_que_esta_na_classe(*args, **kwargs):
-        print('OOi', args, kwargs)
-
-def funcao(*args, **kwargs):
+class Classe: # Criação da classe
+    @staticmethod # Decorador que indica o inicio de um método estatico
+    def funcao_que_esta_na_classe(*args, **kwargs): # Estrutura do método estatico é igual ao de uma função, por que é uma função
+        print('OOi', args, kwargs) # Métodos estaticos são funções criadas dentro de uma classe para unico fim de organizar o código, em um método estático não se usa nenhum tipo de argumento da classe como o self, cls e não tem acesso direto aos atributos
+    # Esses métodos sempre são iniciados com o decorador @staticmethod
+def funcao(*args, **kwargs): # Função que faz exatamente a mesma coisa que o método estático, que é exibir a palavra oi e seus argumentos
         print('OOi', args, kwargs)
 
 c1 = Classe()
-c1.funcao_que_esta_na_classe(1,2,3)
-Classe.funcao_que_esta_na_classe(nomeado=1)
-funcao(1,2,3)
-funcao(nomeado=1)
+c1.funcao_que_esta_na_classe(1,2,3) # Executando o método estático com argumentos não nomeados
+Classe.funcao_que_esta_na_classe(nomeado=1) # Executando o método estático com argumentos nomeados
+funcao(1,2,3) # Executando a função com argumentos não nomeados
+funcao(nomeado=1) # Executando a função com argumentos nomeados
+print()
+
+"""
+Comparação entre method, @classmethod e @staticmethod
+method - self, método de instância
+@classmethod - cls, método de classe
+@staticmethod - método estático
+"""
+class Connection:
+    def __init__(self, host='localhost'):
+        self.host = host
+        self.user = None
+        self.password = None
+
+    def set_user(self, user): # setter
+        self.user = user
+
+    def set_password(self, password): # setter
+        self.password = password
+
+    @classmethod
+    def create_user_auth(cls, user, password):
+        connection = cls()
+        connection.user = user
+        connection.password = password
+        return connection
+    
+    @staticmethod
+    def log(msg):
+        print('LOG:', msg)
+
+        
+c1 = Connection()
+c1.set_user('FreeWillie')
+c1.set_password('123456')
+print(c1.user)
+print(c1.password)
+print()
+
+c2 = Connection.create_user_auth('Victor', 'teste')
+print(c2.user)
+print(c2.password)
+print()
+
+c3 = Connection.log('Essa é a mensagem de log')
+
