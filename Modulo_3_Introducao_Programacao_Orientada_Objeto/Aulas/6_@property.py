@@ -45,15 +45,15 @@ class Caneta:
         self._cor = cor
         self._cor_tampa = None
 
-    @property
-    def cor(self):
-        print('ESTOU NO GETTER')
-        return self._cor
+    @property # Decorator que indica um getter
+    def cor(self): # Declaração do método
+        print('ESTOU NO GETTER') # Apenas um informativo que mostra que esse método é um getter ou seja um receptor de dados
+        return self._cor # Retorna o que for recebido
 
-    @cor.setter
-    def cor(self, valor):
-        print('ESTOU NO SETTER')
-        self._cor = valor
+    @cor.setter # Decorator que indica um setter, deve ser passado o nome do método na frente seguido da palavra .setter
+    def cor(self, valor): # Aqui é passado os argumentos que servirão para entregar os dados ao getter
+        print('ESTOU NO SETTER') # Apenas um informativo que mostra que esse método é um setter ou seja um entregador de dados
+        self._cor = valor # Não retorna nada, apenas armazena o valor no atributo
 
     @property
     def cor_tampa(self):
@@ -64,8 +64,8 @@ class Caneta:
         self._cor_tampa = valor
 
 
-caneta = Caneta('Azul')
-caneta.cor = 'Rosa'
-caneta.cor_tampa = 'Azul'
-print(caneta.cor)
+caneta = Caneta('Azul') # Define o objeto caneta para receber a classe
+caneta.cor = 'Rosa' # Indica ao setter o valor do atributo cor
+caneta.cor_tampa = 'Azul' # Indica ao setter o valor do atributo cor_tampa
+print(caneta.cor) # Exibe o método getter retornando o valor informado no método setter
 print(caneta.cor_tampa)
