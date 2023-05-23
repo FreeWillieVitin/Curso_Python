@@ -1,12 +1,12 @@
-# from sys import path
-# from Pacote_teste.teste import multi
-# from Pacote_teste.teste import *
+from sys import path
+from Pacote_teste.teste import multi
+from Pacote_teste.teste import *
 
 
-# print(__name__)
+print(__name__)
 
-# multi(vezes)
-# print(vezes)
+multi(vezes)
+print(vezes)
 # print(nova)
 
 # print(*path, sep='\n')
