@@ -117,6 +117,46 @@ motor_2_0 = Motor('2.0')
 focus.fabricante = ford
 focus.motor = motor_2_0
 print(focus.nome, focus.fabricante.nome, focus.motor.nome)
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+class Carro:
+    def __init__(self, nome, motor, fabricante):
+        self.nome = nome
+        self.motor = motor
+        self.fabricante = fabricante
+
+    def exibir_detalhes(self):
+        print("Carro:", self.nome)
+        print("Motor:", self.motor.nome)
+        print("Fabricante:", self.fabricante.nome)
+        print()
+
+
+class Motor:
+    def __init__(self, nome):
+        self.nome = nome
+
+
+class Fabricante:
+    def __init__(self, nome):
+        self.nome = nome
+
+
+# Criando instâncias das classes
+motor1 = Motor("Motor 1")
+motor2 = Motor("Motor 2")
+
+fabricante1 = Fabricante("Fabricante 1")
+fabricante2 = Fabricante("Fabricante 2")
+
+carro1 = Carro("Carro 1", motor1, fabricante1)
+carro2 = Carro("Carro 2", motor2, fabricante1)
+carro3 = Carro("Carro 3", motor1, fabricante2)
+
+# Exibindo os detalhes dos carros
+carro1.exibir_detalhes()
+carro2.exibir_detalhes()
+carro3.exibir_detalhes()
 
 
 
