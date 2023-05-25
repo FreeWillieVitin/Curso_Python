@@ -27,7 +27,7 @@ Para saber a ordem de chamada dos métodos
 Use o método de classe Classe.mro()
 Ou o atributo __mro__ (Dunder - Double Underscore)
 """
-class A:
+class A: 
     ...
 
     def falar(self):
@@ -51,7 +51,7 @@ class D(B, C):
     # def falar(self):
     #     print('D')
 
-falando = D()
+falando = D() # Da prioridade de execução a si mesmo ou ao método de classe herdada mais proxima seguindo a ordem do mro
 falando.falar()
 print(D.mro())
 print(D.__mro__)
