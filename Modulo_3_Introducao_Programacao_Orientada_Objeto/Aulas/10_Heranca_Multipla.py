@@ -36,8 +36,8 @@ class A:
 class B(A):
     ...
 
-    # def falar(self):
-    #     print('B')
+    def falar(self):
+        print('B')
 
 class C(A):
     ...
