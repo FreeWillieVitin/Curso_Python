@@ -32,8 +32,8 @@ class Foo:
     ...
 
 
-Foo = type('Foo', (object,), {})
-f = Foo()
+Foo = type('Foo', (object,), {}) # Essa linha de código é a forma visível da estrutura de criação de uma classe em python, a criação da classe começa apartir de uma metaclasse
+f = Foo() # Acima temos a classe a ser criada Foo, de onde ela é herdade, como sempre a classe principal herda da classe object e o seu dicionario
 print(isinstance(f, Foo))
 print(type(f))
 print(type(Foo))
@@ -41,11 +41,11 @@ print()
 def meu_repr(self):
     return f'{type(self).__name__} ({self.__dict__})'
 
-class Meta(type):
-    def __new__(mcs, name, bases, dct):
-        print('MetaClass New')
-        cls = super().__new__(mcs, name, bases, dct)
-        cls.attr = 1234
+class Meta(type): # Podemos também criar nossas metaclasses para que executem prioritariamente quando executamos alguma classe criada por ela
+    def __new__(mcs, name, bases, dct): # A crição da metaclasse parte de um método new com os seus argumentos
+        print('MetaClass New') # Antes de qualquer ação de uma classe o python mostrará a mensagem pois a metaclass traz essa prioridade
+        cls = super().__new__(mcs, name, bases, dct) # Aqui criamos uma instancia para receber a metaclass
+        cls.attr = 1234 # Podendo então usar essa instancia para criar execução para as classes futuras que partiram dessa metaclasse como por exemplo está ação que mostrará 1234 se a função attr for chamada
         cls.__repr__ = meu_repr
 
         print(cls.__dict__)
@@ -58,7 +58,7 @@ class Meta(type):
         print(instancia.__dict__)
         return instancia
 
-class Pessoa(metaclass=Meta):
+class Pessoa(metaclass=Meta): # Aqui temos a primeira classe criada apartir da metaclasse anterior
     def __new__(cls, *args, **kwargs):
         print('Meu New')
         instancia = super().__new__(cls)
@@ -75,3 +75,4 @@ p1 = Pessoa('Victor')
 p1.falar()
 print(p1.attr)
 print(p1)
+# -------------------------------------------------------------------------------------------------------------------------------------------
