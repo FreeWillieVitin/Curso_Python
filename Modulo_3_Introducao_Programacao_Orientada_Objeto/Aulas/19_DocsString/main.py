@@ -11,4 +11,4 @@ import Documentando_Classes
 # print()
 # help(Docstrings_Varias_Linhas)
 # help(Documentando_Funcao)
-help(Documentando_Classes)
+help(Documentando_Classes) # A função help, mostra toda a estrutura do módulo, seu nome, seu título, suas funções

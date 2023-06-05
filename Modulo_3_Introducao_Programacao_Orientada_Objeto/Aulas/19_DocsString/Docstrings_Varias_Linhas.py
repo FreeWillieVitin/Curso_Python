@@ -17,3 +17,5 @@ ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
 laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil 
 molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 """
+
+# O que temos acima são DocStrings de várias linhas, o python reconhece a primeira linha antes do primeiro pulo de linha como um título

@@ -1,4 +1,4 @@
-"""Documentação do módulo"""
+"""Documentação do módulo""" # Título do módulo
 
 variavel = 'valor'
 
