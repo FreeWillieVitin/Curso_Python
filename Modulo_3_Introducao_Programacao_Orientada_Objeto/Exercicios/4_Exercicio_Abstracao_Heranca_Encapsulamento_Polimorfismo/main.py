@@ -31,3 +31,9 @@ Banco será responsável autenticar o cliente e as contas da seguinte maneira:
 Só será possível sacar se passar na autenticação do banco (descrita acima)
 Banco autentica por um método.
 """
+from Contas import ContaCorrente, ContaPoupanca
+from Pessoas import Pessoa, Cliente
+
+clientinho = Pessoa('Victor', 25)
+continha = ContaCorrente(111, 5963963, 2000)
+clientinho.add_conta(continha)

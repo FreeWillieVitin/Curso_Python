@@ -32,7 +32,7 @@ Só será possível sacar se passar na autenticação do banco (descrita acima)
 Banco 
 """
 from abc import ABC, abstractmethod
-from conta import ContaPoupanca, ContaCorrente, Conta
+from Contas import ContaPoupanca, ContaCorrente, Conta
 
 class Pessoa(ABC):
     def __init__(self, nome, idade):
@@ -56,5 +56,9 @@ class Pessoa(ABC):
         self._idade = i
 
 class Cliente(Pessoa):
-    def __init__(self, conta):
-        self.conta = conta
+    def __init__(self):
+        self._conta = []
+
+    def add_conta(self, *contas):
+        for conta in contas:
+            self._conta.append(conta)
