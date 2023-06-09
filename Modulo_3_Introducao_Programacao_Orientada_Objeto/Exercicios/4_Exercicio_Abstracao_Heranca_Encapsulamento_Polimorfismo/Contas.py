@@ -34,15 +34,15 @@ Banco autentica por um método.
 from abc import ABC, abstractmethod
 
 class Conta(ABC):
-    def __init__(self, agencia, numconta, saldo) -> None:
+    def __init__(self, agencia: int, numconta: int, saldo: float = 0) -> None:
         self.agencia = agencia
         self.numconta = numconta
         self.saldo = saldo
 
     @abstractmethod
-    def sacar(self, valor):...
+    def sacar(self, valor: float) -> float:...
 
-    def deposito(self, valor):
+    def deposito(self, valor: float) -> None:
         self.saldo += valor
 
 class ContaPoupanca(Conta):    
@@ -51,7 +51,10 @@ class ContaPoupanca(Conta):
 
         if valor_saque >= 0:
             self.saldo -= valor
+            print('Saque efetuado')
             return self.saldo
+        else:
+            print('Valor abaixo do solicitado')
 
 class ContaCorrente(Conta):
     limite = 500

@@ -34,6 +34,16 @@ Banco autentica por um método.
 from Contas import ContaCorrente, ContaPoupanca
 from Pessoas import Pessoa, Cliente
 
-clientinho = Pessoa('Victor', 25)
+c2 = Cliente('Victor', 25)
+print(c2.nome)
 continha = ContaCorrente(111, 5963963, 2000)
-clientinho.add_conta(continha)
+continha2 = ContaPoupanca(587, 4454644, 5000)
+c2.add_conta(continha)
+c2.add_conta(continha2)
+# continha.sacar(2500)
+# continha.deposito(3000)
+# continha.sacar(5300)
+
+
+
+

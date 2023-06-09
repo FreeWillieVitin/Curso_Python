@@ -31,11 +31,10 @@ Banco será responsável autenticar o cliente e as contas da seguinte maneira:
 Só será possível sacar se passar na autenticação do banco (descrita acima)
 Banco 
 """
-from abc import ABC, abstractmethod
 from Contas import ContaPoupanca, ContaCorrente, Conta
 
-class Pessoa(ABC):
-    def __init__(self, nome, idade):
+class Pessoa():
+    def __init__(self, nome: str, idade: int):
         self.nome = nome
         self.idade = idade
 
@@ -44,19 +43,20 @@ class Pessoa(ABC):
         return self._nome
     
     @nome.setter
-    def nome(self, n):
-        self._nome = n
+    def nome(self, nome: str):
+        self._nome = nome
 
     @property
     def idade(self):
         return self._idade
     
     @idade.setter
-    def idade(self, i):
-        self._idade = i
+    def idade(self, idade: int):
+        self._idade = idade
 
 class Cliente(Pessoa):
-    def __init__(self):
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
         self._conta = []
 
     def add_conta(self, *contas):

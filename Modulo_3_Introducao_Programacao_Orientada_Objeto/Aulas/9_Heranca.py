@@ -68,7 +68,7 @@ class B(A): # A classe B recebe o método da classe A
 class C(B): # E a classe C recebe o método da B que por coincidência recebe o método da classe A
     atributo_c = 'valor_c'
 
-    def metodo(self): # Entãoo dessa forma usando o super() podemos acessar os métodos das classes anteriores seguinto a ordem de resolução dos métodos
+    def metodo(self): # Entãoo dessa forma usando o super() podemos acessar os métodos das classes anteriores seguindo a ordem de resolução dos métodos
         super().metodo() # B
         super(C, self).metodo() # B
         super(B, self).metodo() # A
