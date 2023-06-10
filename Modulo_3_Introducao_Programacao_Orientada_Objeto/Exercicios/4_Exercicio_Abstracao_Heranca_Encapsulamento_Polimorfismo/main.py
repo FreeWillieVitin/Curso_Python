@@ -33,16 +33,34 @@ Banco autentica por um método.
 """
 from Contas import ContaCorrente, ContaPoupanca
 from Pessoas import Pessoa, Cliente
+from Bancos import Banco
 
-c2 = Cliente('Victor', 25)
-print(c2.nome)
+c1 = Cliente('Victor', 25)
 continha = ContaCorrente(111, 5963963, 2000)
-continha2 = ContaPoupanca(587, 4454644, 5000)
-c2.add_conta(continha)
-c2.add_conta(continha2)
+b1 = Banco()
+c1.add_conta(continha)
+b1._conta = c1._conta
+b1.add_cliente(c1)
+print(b1._conta)
+print(b1._cliente)
+print(b1._conta[0])
+
+# for c in list():
+#     for b in b1._conta:
+#         if c in b:
+#             valor = 500
+
+#             if continha.sacar(valor):
+#                 print(f"Saque de R${valor} realizado com sucesso.")
+#             else:
+#                 print("Saldo insuficiente.")
+#         else:
+#             print("Cliente ou conta não autenticados.")
+
 # continha.sacar(2500)
 # continha.deposito(3000)
 # continha.sacar(5300)
+
 
 
 

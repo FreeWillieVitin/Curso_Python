@@ -56,6 +56,10 @@ class ContaPoupanca(Conta):
         else:
             print('Valor abaixo do solicitado')
 
+    def __repr__(self) -> str:
+        attrs = f'{self.agencia!r}, {self.numconta!r}, {self.saldo!r}'
+        return f'{attrs}'
+
 class ContaCorrente(Conta):
     limite = 500
 
@@ -65,3 +69,7 @@ class ContaCorrente(Conta):
         else:
             self.saldo -= valor
             print(f'Você sacou {valor} da sua conta')
+
+    def __repr__(self) -> str:
+        attrs = f'{self.agencia!r}, {self.numconta!r}, {self.saldo!r}'
+        return f'{attrs}'

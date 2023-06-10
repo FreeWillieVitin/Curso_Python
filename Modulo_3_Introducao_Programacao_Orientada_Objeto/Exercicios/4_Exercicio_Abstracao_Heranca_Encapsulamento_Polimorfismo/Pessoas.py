@@ -59,6 +59,11 @@ class Cliente(Pessoa):
         super().__init__(nome, idade)
         self._conta = []
 
+    def __repr__(self) -> str:
+        class_name = type(self).__name__
+        attrs = f'({self.nome!r}, {self.idade!r})'
+        return f'{class_name}{attrs}'
+
     def add_conta(self, *contas):
         for conta in contas:
             self._conta.append(conta)

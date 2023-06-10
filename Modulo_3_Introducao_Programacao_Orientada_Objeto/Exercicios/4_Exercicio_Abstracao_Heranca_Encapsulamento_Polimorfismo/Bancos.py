@@ -35,8 +35,21 @@ from Contas import Conta
 from Pessoas import Pessoa, Cliente
 
 class Banco():
-    def __init__(self, agencia, cliente, conta) -> None:
-        self.agencia = agencia
-        self.cliente = cliente
-        self.conta = conta
+    def __init__(self) -> None:
+        self._cliente = []
+        self._conta = None
+
+    def add_cliente(self, *clientes):
+        for cliente in clientes:
+            self._cliente.append(cliente)
+
+    def checagem_conta(self, dados):
+        return dados in self._conta
+    
+    def checagem_cliente(self, cliente):
+        return cliente in self._cliente
+    
+    def autenticar(self, cliente, conta):
+        return self.checagem_cliente(cliente) and self.autenticchecagem_contaar_conta(conta)
+
 
