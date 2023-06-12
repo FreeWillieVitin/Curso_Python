@@ -44,12 +44,12 @@ class Banco():
             self._cliente.append(cliente)
 
     def checagem_conta(self, dados):
-        return dados in self._conta
+        dados = self._conta
+        return dados
     
     def checagem_cliente(self, cliente):
-        return cliente in self._cliente
+        cliente = self._cliente
+        return cliente
     
-    def autenticar(self, cliente, conta):
-        return self.checagem_cliente(cliente) and self.autenticchecagem_contaar_conta(conta)
 
 

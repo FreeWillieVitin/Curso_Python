@@ -60,9 +60,9 @@ class Cliente(Pessoa):
         self._conta = []
 
     def __repr__(self) -> str:
-        class_name = type(self).__name__
-        attrs = f'({self.nome!r}, {self.idade!r})'
-        return f'{class_name}{attrs}'
+        # class_name = type(self).__name__
+        attrs = f'Cliente: {self.nome!r}, Idade: {self.idade!r}'
+        return f'{attrs}'
 
     def add_conta(self, *contas):
         for conta in contas:

@@ -32,34 +32,32 @@ Só será possível sacar se passar na autenticação do banco (descrita acima)
 Banco autentica por um método.
 """
 from Contas import ContaCorrente, ContaPoupanca
-from Pessoas import Pessoa, Cliente
+from Pessoas import Cliente
 from Bancos import Banco
 
 c1 = Cliente('Victor', 25)
-continha = ContaCorrente(111, 5963963, 2000)
+c2 = Cliente('Marieli', 24)
 b1 = Banco()
+b2 = Banco()
+
+continha = ContaCorrente(111, 5963963, 2000)
+continha2 = ContaPoupanca(589, 4455661, 5000)
+
 c1.add_conta(continha)
-b1._conta = c1._conta
+c2.add_conta(continha2)
+
 b1.add_cliente(c1)
-print(b1._conta)
-print(b1._cliente)
-print(b1._conta[0])
+b2.add_cliente(c2)
 
-# for c in list():
-#     for b in b1._conta:
-#         if c in b:
-#             valor = 500
+b1._conta = c1._conta
+b2._conta = c2._conta
 
-#             if continha.sacar(valor):
-#                 print(f"Saque de R${valor} realizado com sucesso.")
-#             else:
-#                 print("Saldo insuficiente.")
-#         else:
-#             print("Cliente ou conta não autenticados.")
+for n in b1._cliente:
+    if n.nome == c1.nome and c1._conta == b1._conta:
+        continha.sacar(2500)
+    else:
+        print('Usuário não encontrado')
 
-# continha.sacar(2500)
-# continha.deposito(3000)
-# continha.sacar(5300)
 
 
 

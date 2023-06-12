@@ -57,7 +57,7 @@ class ContaPoupanca(Conta):
             print('Valor abaixo do solicitado')
 
     def __repr__(self) -> str:
-        attrs = f'{self.agencia!r}, {self.numconta!r}, {self.saldo!r}'
+        attrs = f'Agência: {self.agencia!r}, Conta: {self.numconta!r}, Saldo: {self.saldo!r}'
         return f'{attrs}'
 
 class ContaCorrente(Conta):
@@ -71,5 +71,5 @@ class ContaCorrente(Conta):
             print(f'Você sacou {valor} da sua conta')
 
     def __repr__(self) -> str:
-        attrs = f'{self.agencia!r}, {self.numconta!r}, {self.saldo!r}'
+        attrs = f'Agência: {self.agencia!r}, Conta: {self.numconta!r}, Saldo: {self.saldo!r}'
         return f'{attrs}'
