@@ -53,12 +53,34 @@ b1._conta = c1._conta
 b2._conta = c2._conta
 
 for n in b1._cliente:
-    if n.nome == c1.nome and c1._conta == b1._conta:
+    name = n.nome
+    con = n._conta
+    if b1.checagem_cliente(name) == c1.nome and c1._conta == b1.checagem_conta(con):
         continha.sacar(2500)
     else:
         print('Usuário não encontrado')
+# -------------------------------------------------------------------------------------------------------------------------------------------
 
+# Solução do professor
+# import contas
+# import pessoas
+# from banco import Banco
 
+# c1 = pessoas.Cliente('Luiz', 30)
+# cc1 = contas.ContaCorrente(111, 222, 0, 0)
+# c1.conta = cc1
+# c2 = pessoas.Cliente('Maria', 18)
+# cp1 = contas.ContaPoupanca(112, 223, 100)
+# c2.conta = cp1
+# banco = Banco()
+# banco.clientes.extend([c1, c2])
+# banco.contas.extend([cc1, cp1])
+# banco.agencias.extend([111, 222])
+
+# if banco.autenticar(c1, cc1):
+#     cc1.depositar(10)
+#     c1.conta.depositar(100)
+#     print(c1.conta)
 
 
 
