@@ -13,17 +13,25 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from pytz import timezone
 
-formata_data = '%d/%m/%Y'
 emprestimo = 1_000_000
 data_emprestimo = datetime(2020,12,20)
 delta1 = relativedelta(years=5)
 data_final = data_emprestimo + delta1
 
+parcelas = []
 data_parcela = data_emprestimo
 while data_parcela < data_final:
-    data1 = data_parcela + relativedelta(months=+1)
-    print(data1)
+    parcelas.append(data_parcela)
+    data_parcela += relativedelta(months=+1)
 
+num_parcelas = len(parcelas)
+valor_parcela = emprestimo / num_parcelas
+
+for data in parcelas:
+    print(f'{data}, {valor_parcela:,.2f}')
+
+print()
+print(f'Você emprestou {emprestimo:,.2f} para pagar em {delta1.years} anos, são {num_parcelas} parcelas de {valor_parcela:,.2f}')
 
     
 
