@@ -10,13 +10,29 @@ A data em que ela pegou o empréstimo foi
 - Mostre todas as datas de vencimento e o valor de cada parcela
 """
 from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
+from pytz import timezone
 
-formato = '%d/%m/%Y'
-data_emprestimo = datetime.strptime('20/12/2020', formato)
-data_pagamento = datetime.strptime('20/12/2025', formato)
-data_emprestimo_fmt = data_emprestimo.strftime('%d/%m/%Y')
-data_pag_fmt = data_pagamento.strftime('%d/%m/%Y')
+formata_data = '%d/%m/%Y'
+emprestimo = 1_000_000
+data_emprestimo = datetime(2020,12,20)
+delta1 = relativedelta(years=5)
+data_final = data_emprestimo + delta1
 
-valor_empr = 1000000
+data_parcela = data_emprestimo
+while data_parcela < data_final:
+    data1 = data_parcela + relativedelta(months=+1)
+    print(data1)
+
+
+    
+
+
+
+
+    
+
+
+
 
 
