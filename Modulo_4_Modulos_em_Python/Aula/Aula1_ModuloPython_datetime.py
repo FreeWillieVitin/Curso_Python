@@ -11,19 +11,274 @@ Para timezones
 https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 Instalando o pytz
 pip install pytz types-pytz
+
+------------------------------------------------------------------------------------------------------------------------------------------
+|                                                   Padrão C para formatar datas e horários                                              |
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%a - Dias da semana como nomes abreviados da localidade.
+-------------------------
+Ex:                      |
+Sun, Mon, …, Sat (en_US);|
+So, Mo, …, Sa (de_DE)    |
+-------------------------
+Notas = (1)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%A - Dia da semana como nome completo da localidade.
+------------------------------------
+Ex:                                 |
+Sunday, Monday, …, Saturday (en_US);|
+Sonntag, Montag, …, Samstag (de_DE) |
+------------------------------------
+Notas = (1)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%w - Dia da semana como um número decimal, onde 0 é domingo e 6 é sábado.
+----------
+Ex:       |
+0, 1, …, 6|
+----------
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%d - Dia do mês como um número decimal com zeros a esquerda.
+-------------
+Ex:          |
+01, 02, …, 31|
+-------------
+Notas = (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%b - Mês como nome da localidade abreviado.
+-------------------------
+Ex:                      |
+Jan, Feb, …, Dec (en_US);|
+Jan, Feb, …, Dez (de_DE) |
+-------------------------
+Notas = (1)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%B - Mês como nome completo da localidade.
+---------------------------------------
+Ex:                                    |
+January, February, …, December (en_US);|
+janeiro, fevereiro, …, dezembro (pt_BR)|
+---------------------------------------
+Notas = (1)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%m - Mês como um número decimal com zeros a esquerda.
+-------------
+Ex:          |
+01, 02, …, 12|
+-------------
+Notas = (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%y - Ano sem século como um número decimal com zeros a esquerda.
+-------------
+Ex:          |
+00, 01, …, 99|
+-------------
+Notas = (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%Y - Ano com século como um número decimal.
+----------------------------------------
+Ex:                                     |
+0001, 0002, …, 2013, 2014, …, 9998, 9999|
+----------------------------------------
+Notas = (2)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%H - Hora (relógio de 24 horas) como um número decimal com zeros a esquerda.
+-------------
+Ex:          |
+00, 01, …, 23|
+-------------
+Notas = (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%I - Hora (relógio de 12 horas) como um número decimal com zeros a esquerda.
+-------------
+Ex:          |
+01, 02, …, 12|
+-------------
+Notas = (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%p - Equivalente da localidade a AM ou PM.
+---------------
+Ex:            |
+AM, PM (en_US);|
+am, pm (de_DE) |
+---------------
+Notas = (1), (3)        
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%M - Minutos como um número decimal, com zeros a esquerda.
+-------------
+Ex:          |
+00, 01, …, 59|
+-------------
+Notas = (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%S = Segundos como um número decimal, com zeros a esquerda.
+-------------
+Ex:          |
+00, 01, …, 59|
+-------------
+Notas = (4), (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%f - Microssegundos como um número decimal, com zeros à esquerda até completar 6 dígitos.
+-------------------------
+Ex:                      |
+000000, 000001, …, 999999|
+-------------------------
+Notas = (5)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%z - Diferença UTC no formato ±HHMM[SS[.ffffff]] (string vazia se o objeto é ingênuo).
+-----------------------------------------------------
+Ex:                                                  |
+(vazio), +0000, -0400, +1030, +063415, -030712.345216|
+-----------------------------------------------------
+Notas = (6)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%Z - Nome do fuso horário (string vazia se o objeto é ingênuo).
+-----------------
+Ex:              |
+(vazio), UTC, GMT|
+-----------------
+Notas = (6)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%j - Dia do ano como um número decimal, com zeros a esquerda.
+----------------
+Ex:             |
+001, 002, …, 366|
+----------------
+Notas = (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%U - Número da semana do ano (Domingo como o primeiro dia da semana) como um número decimal, com zeros a esquerda. 
+Todos os dias em um ano novo precedendo o primeiro domingo são considerados como estando na semana 0.
+-------------
+Ex:          |
+00, 01, …, 53|
+-------------
+Notas = (7), (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%W - Número da semana do ano (Segunda-feira como o primeiro dia da semana) como um número decimal, com zeros a esquerda. 
+Todos os dias em um ano novo precedendo a primeira segunda-feira são considerados como estando na semana 0.
+-------------
+Ex:          |
+00, 01, …, 53|
+-------------
+Notas = (7), (9)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%c - Representação de data e hora apropriada da localidade.
+---------------------------------
+Ex:                              |
+Tue Aug 16 21:30:00 1988 (en_US);|
+Di 16 Aug 21:30:00 1988 (de_DE)  |
+---------------------------------
+Notas = (1)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%x - Representação de data apropriada de localidade.
+-------------------
+Ex:                |
+08/16/88 (None);   |
+08/16/1988 (en_US);|
+16.08.1988 (de_DE) |
+-------------------
+Notas = (1)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%X - Representação de hora apropriada da localidade.
+-----------------
+Ex:              |
+21:30:00 (en_US);|
+21:30:00 (de_DE) |
+-----------------
+Notas = (1)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%% - Um caractere literal '%'.
+---
+Ex:|
+%  |
+---
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%G - Ano ISO 8601 com o século representando o ano que a maior parte da semana ISO (%V).
+----------------------------------------
+Ex:                                     |
+0001, 0002, …, 2013, 2014, …, 9998, 9999|
+----------------------------------------
+Notas = (8)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%u - Dia de semana ISO 8601 como um número decimal onde 1 é segunda-feira.
+----------
+Ex:       |
+1, 2, …, 7|
+----------
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+%V - Semana ISO 8601 como um número decimal, com segunda-feira como o primeiro dia da semana.
+A semana 01 é a semana contendo o dia 4 de Janeiro.
+-------------
+Ex:          |
+01, 02, …, 53|
+-------------
+Notas = (8), (9)
+
 """
-from datetime import datetime
-from pytz import timezone
+from datetime import datetime # Para trabalhar com datas e horários usamos o módulo do python chamado datetime
+from pytz import timezone # Uma das funções existentes na biblioteca é a timezone, que basicamente serve para definir a timezone que será usada em seu código
 
-data_str = '2022-04-12 07:49:23'
-data_fmt = '%Y-%m-%d %H:%M:%S'
+data_str = '2022-04-12 07:49:23' # Aqui temos uma variável que recebe uma data e um horário, escrita de forma manual
+data_fmt = '%Y-%m-%d %H:%M:%S' # E nesta variável temos o formato a ser exibido, seguindo o padrão C, mostrado no descritivo acima
 
-data = datetime(2022, 4, 12, 12, 46, 23, tzinfo=timezone('Asia/Tokyo'))
-data2 = datetime.strptime(data_str, data_fmt)
-data3 = datetime.now(timezone('America/Sao_Paulo'))
+data = datetime(2022, 4, 12, 12, 46, 23, tzinfo=timezone('Asia/Tokyo')) # Podemos usar o datetime para passar a data e a hora como parâmetro na seguinte ordem: (Ano, Mês, Dia, Hora, Minuto, Segundo, Microsegundo) e usando a função timezone podemos definir de qual localidade será exibido o timezone
+data2 = datetime.strptime(data_str, data_fmt) # Com a classe datetime podemos usar o método strptime para passar uma variável de datetime e como segundo atributo, uma variável de formato de data
+data3 = datetime.now(timezone('America/Sao_Paulo')) # O método now, exibe a datae horário atual, seguindo a timezone passada
 data4 = datetime.now(timezone('Asia/Tokyo'))
-data5 = datetime.now()
-data6 = datetime.fromtimestamp(45646)
+data5 = datetime.now() # E usando o método now sozinho exibe apenas a data atual seguindo a timezone padrão do computador
+data6 = datetime.fromtimestamp(80000)
 
 print(data)
 print(data2)
