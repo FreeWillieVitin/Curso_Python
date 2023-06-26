@@ -8,7 +8,7 @@ locale -a no linux - Mostra todos as localizações
 import calendar
 import locale
 
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale(locale.LC_ALL, '') # Seta o local para internacionalização, por exemplo como padrão o python retorna os meses em língua inglesa, se for definido a localização para ragião pt_BR, o python automáticamente muda a sua linguagem de localização
 
 print(calendar.calendar(2023))
-print(locale.getlocale())
+print(locale.getlocale()) # getlocale() exibe a localização atual

@@ -275,16 +275,16 @@ data_fmt = '%Y-%m-%d %H:%M:%S' # E nesta variável temos o formato a ser exibido
 
 data = datetime(2022, 4, 12, 12, 46, 23, tzinfo=timezone('Asia/Tokyo')) # Podemos usar o datetime para passar a data e a hora como parâmetro na seguinte ordem: (Ano, Mês, Dia, Hora, Minuto, Segundo, Microsegundo) e usando a função timezone podemos definir de qual localidade será exibido o timezone
 data2 = datetime.strptime(data_str, data_fmt) # Com a classe datetime podemos usar o método strptime para passar uma variável de datetime e como segundo atributo, uma variável de formato de data
-data3 = datetime.now(timezone('America/Sao_Paulo')) # O método now, exibe a datae horário atual, seguindo a timezone passada
+data3 = datetime.now(timezone('America/Sao_Paulo')) # O método now, exibe a data e horário atual, seguindo a timezone passada
 data4 = datetime.now(timezone('Asia/Tokyo'))
 data5 = datetime.now() # E usando o método now sozinho exibe apenas a data atual seguindo a timezone padrão do computador
-data6 = datetime.fromtimestamp(80000)
+data6 = datetime.fromtimestamp(80000) # A função fromtimestamp converte um valor numérico que faz referência a alguma data/hora para um valor datetime, esse valor númerico representa os segundo e segue o padrão UNIX e POSIX, ou seja passa a valer os segudnos apartir da data 01/01/1970 ás 00:00:00 e cada numéro passado como parâmentro representa uma adição a essa data
 
 print(data)
 print(data2)
 print(data3)
 print(data4)
-print(data5.timestamp())
+print(data5.timestamp()) # Exibe o valor em forma timestamp da data/hora atual, ou seja cada segundo e milisegundo apartir da data/hora padrão UNIX 01/01/1970 ás 00:00:00
 print(data6)
 print()
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -298,23 +298,24 @@ https://docs.python.org/3/library/datetime.html#timedelta-objects
 from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 
-fmt = '%d/%m/%Y %H:%M:%S'
-data_inicio = datetime.strptime('15/05/1986 08:05:12', fmt)
+fmt = '%d/%m/%Y %H:%M:%S' # Variável que recebe um formato para data/hora
+data_inicio = datetime.strptime('15/05/1986 08:05:12', fmt) # Variável que recebe o método strptime da classe datetime, nela é passado como paramêtro um horario e como ele deve ser formatado, no caso usando a variável acima
 data_fim = datetime.strptime('23/11/2003 12:45:23', fmt)
-calc_data = data_fim - data_inicio
+calc_data = data_fim - data_inicio # Calculo sobre duas data, subtração entre a data da variável data_fim, com a data da variável data_inicio
 delta = data_fim - data_inicio
-delta1 = timedelta(days=10, hours=10)
-delta2 = relativedelta(data_fim, data_inicio)
+delta1 = timedelta(days=10, hours=10) # Usando a classe timedelta, podemos passar argumentos que serão calculados a datas previamente especificadas
+delta2 = relativedelta(data_fim, data_inicio) # A Classe relativedelta é basicamente a timedelta melhorada, pois além de trabalhar com dias, ela pode realizar calculos com meses, anos, semanas ou seja, medidas de tempo mais granulares
 
 print(calc_data)
 print(delta.days, delta.seconds, delta.microseconds)
-print(delta.total_seconds())
+print(delta.total_seconds()) # Exibe a quantidade de segundos total de um valor datetime
 print(data_fim + delta1)
-print(data_fim + relativedelta(seconds=59, minutes=70))
+print(data_fim + relativedelta(days=5, months=3, seconds=59, minutes=70)) # Neste caso estamos adicionando mais 3 meses além da data_fim, o relativedelta trabalha com mais precisão e flexibilidade
 print(data_fim)
-print(delta2)
+print(delta2) # E se executar apenas a variável em que o relativedelta está com seus argumentos de data, será retornado o intervalo entre uma data e outra
 print()
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 """
 # Formatando datas do datetime
 # datetime.strftime('DATA', 'FORMATO')

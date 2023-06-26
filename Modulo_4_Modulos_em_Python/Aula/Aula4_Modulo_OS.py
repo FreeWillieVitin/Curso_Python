@@ -57,3 +57,10 @@ print()
 print(os.path.abspath('.')) # Retorna o caminho absoluto
 print(os.path.basename(caminho))
 print(os.path.dirname(caminho))
+print()
+# ----------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+os.listdir para navegar em caminhos
+/Users/Victor/Desktop/Imagens
+"""
