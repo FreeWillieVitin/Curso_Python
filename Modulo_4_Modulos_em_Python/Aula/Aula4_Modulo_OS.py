@@ -10,8 +10,8 @@ Windows 11 (PowerShell), Linux, Mac = clear
 Windows (antigo, cmd) = cls
 """
 import os
-os.system('cls')
-os.system('echo "Hello World"')
+os.system('cls') # Limpa o prompt a cada execução
+os.system('echo "Hello World"') # Exibe a frase Hello World no prompt através do comando echo, pode ser implementado no codigo python através do módulo os e usando a função system, ou pode ser executado direto no prompt
 
 
 print('a' * 80)
@@ -42,21 +42,21 @@ operação de entrada/saída (I/O) com arquivos em si.
 """
 import os
 
-caminho = os.path.join('\\Modulo_4_Modulos_em_Python', 'Aula', 'Aquivo.txt')
-print(caminho)
-diretorio, arquivo = os.path.split(caminho)
-caminho_arquivo, extensao = os.path.splitext(caminho)
-print(diretorio)
+caminho = os.path.join('\\Modulo_4_Modulos_em_Python', 'Aula', 'Aquivo.txt') #  A função join do módulo os, monta um caminho para criação de pastas, localização de arquivos, tranfêrencias de arquivos e outras funções
+print(caminho) # Exibe o caminho criado
+diretorio, arquivo = os.path.split(caminho) # A função split divide o caminho do arquivo entre o seu diretório e o nome do arquivo com sua extensão, usasse duas variáveis na função, uma parareceber o caminho e a outra para receber o arquivo
+caminho_arquivo, extensao = os.path.splitext(caminho) # Já o splitext divide entre o caminho do arquivo e a extesão do arquivo, pode ser usado para filtragem de tipos de arquivo, por exemplo .txt
+print(diretorio) 
 print(arquivo)
 print(caminho_arquivo)
 print(extensao)
 print()
-print(os.path.exists(caminho))
+print(os.path.exists(caminho)) # Verifica se o caminho passado como parâmetro existe ou não, podendo ser uma variável ou o caminho escrito manualmente
 print(os.path.exists('C:\\Users\\Victor\\Documents\\GitHub\\professor\\Curso_Python\\Modulo_4_Modulos_em_Python'))
 print()
 print(os.path.abspath('.')) # Retorna o caminho absoluto
-print(os.path.basename(caminho))
-print(os.path.dirname(caminho))
+print(os.path.basename(caminho)) # Retorna o ultimo digamos item pertencente ao caminho, no caso do exemplo a última parte do caminho é o arquivo.txt
+print(os.path.dirname(caminho)) # Retorna somente o diretório, sem os arquivos presentes
 print()
 # ----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -64,10 +64,10 @@ print()
 os.listdir para navegar em caminhos
 C:\\Users\\Victor\\Desktop\\imagens
 """
-caminho2 = ('C:\\Users\\Victor\\Desktop\\imagens')
+caminho2 = ('C:\\Users\\Victor\\Desktop\\imagens') # Variável armazenando o caminho completo do arquivo
 
-for pasta in os.listdir(caminho2):
-    caminho_completo = os.path.join(caminho2, pasta)
+for pasta in os.listdir(caminho2): # A função listdir é usada para listar tudo o que está dentro do arquivo, seus documentos, subpastas, imagens e etc
+    caminho_completo = os.path.join(caminho2, pasta) # É uma função iteravel, o python itera sobre o caminho e retorna item por item
     print(pasta)
 
     if not os.path.isdir(caminho_completo):
