@@ -53,8 +53,23 @@ for i in range(10):
     if file.exists():
         file.unlink()
     else:
-        file.touch()
+        file.touch() # Atualiza a ultima modificação do arquivo, mas por consequência cria o arquivo também
 
     with file.open('a+') as text_file:
         text_file.write('Ola mundo\n')
         text_file.write(f'file_{i}.txt')
+
+def rmtree(root: Path, remove_root=True):
+    for file in root.glob('*'):
+        if file.is_dir():
+            print('Dir:', file)
+            rmtree(file, False)
+            file.rmdir()
+        else:
+            print('Dir:', file)
+            file.unlink()
+
+    if remove_root:
+        root.rmdir()
+
+rmtree(caminho_pasta)
