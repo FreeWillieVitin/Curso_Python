@@ -1,3 +1,4 @@
-Nome,Idade
-Victor Hugo,25
-Marieli,24
+Nome,Idade,Endereco
+Victor Hugo,25,"Rua 22, 44, Nova Era"
+Marieli,24,"Av Brasil, 21, Centro"
+
