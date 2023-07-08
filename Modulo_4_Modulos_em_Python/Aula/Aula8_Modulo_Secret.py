@@ -1,14 +1,15 @@
 """
-# random tem geradores de números pseudoaleatórios
-# Obs.: números pseudoaleatórios significa que os números
-# parecem ser aleatórios, mas na verdade não são. Portanto,
-# este módulo não deve ser usado para segurança ou uso criptográfico.
-# O motivo disso é que quando temos uma mesma entrada e um mesmo algorítimo,
-# a saída pode ser previsível.
-# doc: https://docs.python.org/pt-br/3/library/random.html
+Secrets gera números aleatórios seguros
 """
+import secrets
 import random
-import time
+
+
+print(secrets.randbelow(100))
+print(secrets.choice([10,11,12]))
+print()
+
+random = secrets.SystemRandom()
 
 """
 Funções:
@@ -16,9 +17,7 @@ seed
   -> Inicializa o gerador de random (por isso "números pseudoaleatórios")
 random.seed(0)
 """
-# random.seed(0)
-# random.seed(time.time())
-# print(time.time())
+# random.seed(0) # Não faz nada com o SystemRandom ativo
 
 """
 random.randrange(início, fim, passo)
@@ -72,4 +71,12 @@ print()
 random.choice(Iterável) -> Escolhe um elemento do iterável
 """
 print(random.choice(nomes))
+print()
+
+# --------------------------------------------------------------------------------------------------------------------------------------
+import string as s
+from secrets import SystemRandom as sr
+
+print(s.ascii_letters + s.digits + s.punctuation)
+print(''.join(sr().choices(s.ascii_letters + s.digits + s.punctuation, k=12)))
 
