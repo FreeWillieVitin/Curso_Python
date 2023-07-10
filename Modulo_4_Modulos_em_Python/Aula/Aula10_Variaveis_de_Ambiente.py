@@ -18,8 +18,9 @@ import os
 from dotenv import load_dotenv
 # $env:SENHA="teste"
 # dir env:
-print(os.getenv('IGNORADO'))
+print(os.getenv('SENHA'))
 print()
 
 load_dotenv()
-print(os.environ)
+print(os.getenv('CARROÇA'))
+# print(os.environ)
