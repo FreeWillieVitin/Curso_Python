@@ -15,7 +15,11 @@ https://pypi.org/project/python-dotenv/
 OBS.: sempre lembre-se de criar um .env-example
 """
 import os
+from dotenv import load_dotenv
 # $env:SENHA="teste"
 # dir env:
-senha = os.getenv('SENHA')
-print(senha)
+print(os.getenv('IGNORADO'))
+print()
+
+load_dotenv()
+print(os.environ)

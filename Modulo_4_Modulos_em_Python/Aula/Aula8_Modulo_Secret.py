@@ -17,7 +17,7 @@ seed
   -> Inicializa o gerador de random (por isso "números pseudoaleatórios")
 random.seed(0)
 """
-# random.seed(0) # Não faz nada com o SystemRandom ativo
+random.seed(0) # Não faz nada com o SystemRandom ativo
 
 """
 random.randrange(início, fim, passo)
@@ -77,6 +77,6 @@ print()
 import string as s
 from secrets import SystemRandom as sr
 
-print(s.ascii_letters + s.digits + s.punctuation)
-print(''.join(sr().choices(s.ascii_letters + s.digits + s.punctuation, k=12)))
+print(s.ascii_letters + s.digits + s.punctuation) # O modulo string, nos dá acesso aos caracters por exemplo: (ascii_letters = todas as letras maiusculas e minusculas seguindo o padrão ascii, digits = números de 0 a 9, punctuation = caracteres especias como *,+,/ e outros)
+print(''.join(sr().choices(s.ascii_letters + s.digits + s.punctuation, k=12))) # A classe SystemRandom, inutiliza as seed, ou seja independente da seed se inserida manualmente ou não o valor gerado é sempre aleatorio, no codigo de exemplo é misturado aléatoriamente os caracteres sem se importar com a seed passada
 
