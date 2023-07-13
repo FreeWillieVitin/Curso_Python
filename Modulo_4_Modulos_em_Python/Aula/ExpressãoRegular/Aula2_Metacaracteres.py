@@ -74,6 +74,7 @@ print()
 Meta Caracteres
 Grupos e retrovisores: ^ $
 () = Grupo
+\1 \2 = Retrovisores
 """
 texto4 = """
 <p>Te amo</p> <p>muito</p> <p>meu amor</p> <div>1</div>
