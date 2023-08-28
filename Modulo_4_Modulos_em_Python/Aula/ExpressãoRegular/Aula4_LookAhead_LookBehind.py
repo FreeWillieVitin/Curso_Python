@@ -10,7 +10,8 @@ ONLINE  192.168.0.5 GHIJK inactive
 OFFLINE  192.168.0.6 GHIJK active
 """
 
-# Positive lookahead - Verifica se existe algo após a expressão regular checada, no caso o número dos ip
+# Positive lookahead - Verifica se existe algo após a expressão regular checada
+# , no caso o número dos ip
 pprint(re.findall(r'\w+\s+(\d+\.\d+\.\d+\.\d+)\s+\w+\s+(?=active)', texto))
 
 # Negative lookahead

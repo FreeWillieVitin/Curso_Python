@@ -11,17 +11,20 @@
     venv env .venv .env
 """
 
-# python -m venv venv - esse é o comando no powersheel para criação de um ambiente virtual (O nome da venv é o segundo, pode ser qualquer nome)
-# gcm python - Localiza o caminho de instalação do python ou de qualquer arquivo que for passado após o gcm
+# python -m venv venv - esse é o comando no powersheel para criação de um
+# ambiente virtual (O nome da venv é o segundo, pode ser qualquer nome)
+# gcm python - Localiza o caminho de instalação do python ou de qualquer
+# arquivo que for passado após o gcm
 # gcm python -Syntax - Mostra apenas o caminho, não traz outras informações
 # No linux ou IOS o comando a cima é executado por which python
-# Esse é o caminho do python global no computador do meu trabalho C:\Users\HSVP\AppData\Local\Programs\Python\Python311\python.exe
+# Esse é o caminho do python global no computador do meu trabalho
+# C:\Users\HSVP\AppData\Local\Programs\Python\Python311\python.exe
 
 """
 Como Ativar o ambiente virtual no windows
 """
 # NomeDoAmbienteVirtual\Scripts\activate
-
+# Executar a venv ao iniciar o VS-CODE = SetExecutionPolicy Unrestricted -Force
 """
 Como Ativar o ambiente virtual no Linux
 Qualquer um dos modos abaixo executa
@@ -32,14 +35,19 @@ Qualquer um dos modos abaixo executa
 """
 Instalar ou desinstalar pacotes e bibliotecas
 """
-# Para instalar pacotes que não vem com o python, usamos o comando pip install NomeDoPacoteOuBiblioteca
+# Para instalar pacotes que não vem com o python,
+# usamos o comando pip install NomeDoPacoteOuBiblioteca
 # E o pip uninstall NomeDoPacoteOuBiblioteca para desinstalar
 
 """
 Listar pacotes instalados
 """
-# pip freeze - Exibe todos os pacotes instalados, o pip freeze também é utlizado para criar um arquivo requirements.txt, 
-# Esse requirements.txt serve como um instalador de pacotes padrão, quando for criado uma venv nova para nao ter que ficar instalando pacote por pacote
-# Executamos o requirements e tudo o que estiver especificado nele será instalado
+# pip freeze - Exibe todos os pacotes instalados, o pip freeze também é
+# utlizado para criar um arquivo requirements.txt,
+# Esse requirements.txt serve como um instalador de pacotes padrão, quando for
+# criado uma venv nova para nao ter que ficar instalando pacote por pacote
+# Executamos o requirements e tudo o que estiver
+# especificado nele será instalado
 # Comando para criar o requirements.txt - pip freeze > NomeDoArquivo.txt
-# E para instalar os pacotes e bibliotecas do requirements - pip install -r NomeDoArquivo.txt
+# E para instalar os pacotes e bibliotecas do
+# requirements - pip install -r NomeDoArquivo.txt
