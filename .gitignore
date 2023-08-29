@@ -9,3 +9,6 @@ venv.bak/
 
 # Node
 node_modules
+
+#.txt
+token.txt

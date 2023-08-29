@@ -1,22 +1,22 @@
 import requests
 from get_token import token
 
-url = "http://127.0.0.1:3001/alunos/3"
+url = "http://127.0.0.1:3001/alunos/1"
 
 headers = {
     'Authorization': token
 }
 
 aluno_data = {
-    "nome": "Marieli",
-    "sobrenome": "Stankievski",
-    "email": "mozi@gmail.com",
-    "idade": "25",
-    "peso": "84.04",
-    "altura": "1.70"
+    # "nome": "Marieli",
+    # "sobrenome": "Stankievski",
+    # "email": "mozi@gmail.com",
+    # "idade": "25",
+    # "peso": "84.04",
+    # "altura": "1.70"
 }
 
-response = requests.put(url=url, json=aluno_data, headers=headers)
+response = requests.delete(url=url, json=aluno_data, headers=headers)
 
 if response.status_code >= 200 and response.status_code <= 299:
     # Sucesso

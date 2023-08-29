@@ -8,9 +8,9 @@ headers = {
 }
 
 aluno_data = {
-    "nome": "Luiz",
-    "sobrenome": "Carlos",
-    "email": "Pai@gmail.com",
+    "nome": "Marieli",
+    "sobrenome": "Stankievski",
+    "email": "mozi@gmail.com",
     "idade": "25",
     "peso": "84.04",
     "altura": "1.70"
