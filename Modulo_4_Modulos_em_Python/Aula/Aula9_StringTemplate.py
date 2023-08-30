@@ -36,7 +36,8 @@ print()
 texto = """
 Prezado(a) $nome,
 
-Informamos que sua mensalidade será cobrada no valor de ${valor} no dia $data. Caso deseje cancelar o serviço, entre em contato com a $empresa pelo telefone $telefone.
+Informamos que sua mensalidade será cobrada no valor de ${valor} no dia $data. Caso deseje cancelar o serviço, entre em contato 
+com a $empresa pelo telefone $telefone.
 
 Atenciosamente,
 

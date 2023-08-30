@@ -38,7 +38,7 @@ parser.add_argument('-b', '--basic',
                     # default='Olá Mundo', # Valor padrão
                     # required=True
                     # nargs='+' # Recebe mais de um valor
-                    action='append' # Recebe o argumento mais de uma vez, salvos em uma lista
+                    action='append'  # Recebe o argumento mais de uma vez, salvos em uma lista
 )
 
 parser.add_argument('-v', '--verbose',
