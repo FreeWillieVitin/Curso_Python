@@ -39,3 +39,4 @@ print(pingar.stderr)  # Retorna um erro se houver, no caso aqui não tivemos err
 print(pingar.stdout)  # Exibe o retorno do sistema para aquele comando, todo em bytes pois não foi decodificado
 print(pingar.stdout.decode('cp852'))  # O mesmo retorno porém decodificado usando a função decode e o tipo de codificação
 print(pingar.returncode)
+print()

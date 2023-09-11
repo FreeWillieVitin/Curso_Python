@@ -1,0 +1,11 @@
+# Jupyter Notebook - Instalação e teste
+# Para instalar apenass execute o pip intall jupyter notebook e para executar digite no console jupyter notebook
+
+# Essa linha cria uma variável a
+a = 2
+
+# Essa linha tem o valor da variável `a` em dobro
+b = a * 2  # 4
+
+# Essa linha mostra o valor de `a` + `b`
+print(a + b)  # 6
