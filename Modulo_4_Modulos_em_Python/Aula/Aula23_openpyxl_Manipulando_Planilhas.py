@@ -13,6 +13,7 @@ from pathlib import Path
 from openpyxl import Workbook, load_workbook
 from openpyxl.worksheet.worksheet import Worksheet
 
+
 ROOT_FOLDER = Path(__file__).parent
 WORKBOOK_PATH = ROOT_FOLDER / 'workbook.xlsx'
 
@@ -23,7 +24,7 @@ sheet_name = 'Minha planilha'
 # Cria a planilha
 workbook.create_sheet(sheet_name)
 # Seleciona a planilha
-worksheet: Worksheet = workbook.active  # type: ignore
+worksheet: Worksheet = workbook[sheet_name]  # type: ignore
 print(workbook.sheetnames)
 
 # Remove sheet da planilha
@@ -61,5 +62,20 @@ openpyxl - ler e alterar dados de uma planilha
 # Carregando um arquivo xlsx
 workbook1: Workbook = load_workbook(WORKBOOK_PATH)
 
-for row in worksheet.iter_rows():
-    ...
+sheet_name1 = 'Minha planilha'
+
+worksheet1: Worksheet = workbook1[sheet_name1]
+
+for row in worksheet1.iter_rows(min_row=2):
+    for variavel in row:
+        print(variavel.value, end='\t')
+
+        if variavel.value == 'Marieli':
+            worksheet1.cell(variavel.row, 2, 23)  # type: ignore
+    print()
+
+print(worksheet1['B3'].value)
+# worksheet1['B3'].value = 14
+# print(worksheet1['B3'].value)
+
+workbook1.save(WORKBOOK_PATH)
