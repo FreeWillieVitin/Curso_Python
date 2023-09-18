@@ -30,5 +30,3 @@ for week in calendar.monthcalendar(2022, 2):
         print(day, week) # Podemos também iterar sobre essas informações e ver todos os dias e em qual conjunto de dias da semana ele pertence
 print()
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
