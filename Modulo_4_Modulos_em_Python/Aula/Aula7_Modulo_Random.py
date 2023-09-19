@@ -72,4 +72,3 @@ print()
 random.choice(Iterável) -> Escolhe um elemento do iterável
 """
 print(random.choice(nomes))
-

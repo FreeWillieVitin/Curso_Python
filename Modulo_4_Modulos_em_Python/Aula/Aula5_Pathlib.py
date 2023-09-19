@@ -32,32 +32,32 @@ print(cria_arquivo.read_text())  # Com base no caminho passado para a variável,
 # cria_arquivo.unlink()  # Unlink exclui o arquivo definitivamente
 print()
 
-caminho_arquivo2 = Path.home() / 'Desktop' / 'abcd.txt'
+caminho_arquivo2 = Path.home() / 'Desktop' / 'abcd.txt'  # Variável que recebe o caminho de um arquivo
 
-with caminho_arquivo2.open('a+') as arquivo:
-    arquivo.write('Uma Linha\n')
+with caminho_arquivo2.open('a+') as arquivo:  # Usando o variável acima, abrimos o documento em modo append(Modo de inserção)
+    arquivo.write('Uma Linha\n')  # Escrevemos no documento uma linha de texto
     arquivo.write('Duas Linhas\n')
 
-print(caminho_arquivo2.read_text())
+print(caminho_arquivo2.read_text())  # Lê o documento
 print()
 
-caminho_pasta = Path.home() / 'Desktop' / 'Pasta PathLib'
-caminho_pasta.mkdir(exist_ok=True)
-subpasta = caminho_pasta / 'SubPasta'
+caminho_pasta = Path.home() / 'Desktop' / 'Pasta PathLib'  # Outra variável dessa vez ela será responsável por criar uma pasta
+caminho_pasta.mkdir(exist_ok=True)  # Função mkdir cria uma pasta com base na variável passada, se a pasta já existir ignora
+subpasta = caminho_pasta / 'SubPasta'  # Dentro da pasta criada acima, criamos uma subpasta
 subpasta.mkdir(exist_ok=True)
 
-outro_arquivo = subpasta / 'arquivo.txt'
-outro_arquivo.touch()
-outro_arquivo.write_text('Oi Mundo')
+outro_arquivo = subpasta / 'arquivo.txt'  # Variável que recebe o caminho para a criação de um arquivo txt
+outro_arquivo.touch()  # Cria o arquivo txt com base na variável
+outro_arquivo.write_text('Oi Mundo')  # Escreve no arquivo
 
-files = caminho_pasta / 'files'
-files.mkdir(exist_ok=True)
+files = caminho_pasta / 'files'  # Variável para criação de outra pasta
+files.mkdir(exist_ok=True)  # Se a pasta ja existir ignora, caso contrário é criada a pasta 'files'
 
-for i in range(10):
-    file = files / f'file_{i}.txt'
+for i in range(10):  # Iteramos em um range de 0 a 9
+    file = files / f'file_{i}.txt'  # Variável recebe o caminho da pasta acima e um nome de arquivo txt que segue a iteração
 
-    if file.exists():
-        file.unlink()
+    if file.exists():  # Checa se existe arquivos no caminho da variável acima
+        file.unlink()  # Se existir excluir os arquivos
     else:
         file.touch()  # Atualiza a ultima modificação do arquivo, mas por consequência cria o arquivo também
 

@@ -17,9 +17,11 @@ CAMINHO_ARQUIVO = Path(__file__).parent / 'Aula9_Texto_teste.txt'
 
 locale.setlocale(locale.LC_ALL, '')
 
+
 def converte_para_brl(numero: float | int) -> str:
     brl = locale.currency(numero, symbol=True, grouping=True)
     return brl
+
 
 data = datetime(2022, 10, 28)
 dados = dict(
