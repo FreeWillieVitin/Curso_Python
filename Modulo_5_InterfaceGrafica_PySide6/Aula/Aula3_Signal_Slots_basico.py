@@ -1,42 +1,6 @@
 """
-QApplication e QPushButton de PySide6.QtWidgets
-QApplication -> O Widget principal da aplicação
-QPushButton -> Um botão
-PySide6.QtWidgets -> Onde estão os widgets do PySide6
+O básico sobre Signal e Slots (eventos e documentação)
 """
-# import sys
-
-# from PySide6.QtWidgets import QApplication, QPushButton
-
-# app = QApplication()
-
-# botao = QPushButton('Marieli Amor da Minha Vida')  # Exibe um botão na tela com um texto dentro
-# botao.setStyleSheet('font-size: 40px; color: Pink; background-color: blue')  # Estiliza o botão usando comandos CSS
-# botao.show()  # Adiciona o widget na hierarquia e exibe a janela
-
-# botao2 = QPushButton('Botão2')
-# botao2.show()
-
-# app.exec()  # Executa a aplicação
-# --------------------------------------------------------------------------------------------------------------------------------
-
-"""
-# QWidget e QLayout de PySide6.QtWidgets
-# QWidget -> genérico
-# QLayout -> Um widget de layout que recebe outros widgets
-
-Os processos da aplicação - QMainWindow e centralWidget
--> QApplication (app)
-    -> QMainWnow (window->setCentralWdget)
-        -> CentralWidget (central_widget)
-            -> Layout
-                -> Widget 3 (Botão 3)
-                -> Widget 4 (Botão 4)
-                -> Widget 5 (Botão 5)
-    -> show
--> exec
-"""
-import sys
 
 from PySide6.QtWidgets import QApplication, QPushButton, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QMainWindow
 
@@ -72,11 +36,20 @@ def exemplo_acao(status_bar):
     status_bar.showMessage('O slot foi executado')
 
 
+def segundo_slot(status_bar):
+    status_bar.showMessage('O slot foi executado')
+
+
 # MenuBar
 menu = window.menuBar()
 primeiro_menu = menu.addMenu('Primeiro Menu')
 acao = primeiro_menu.addAction('Primeira Ação')
 acao.triggered.connect(lambda: exemplo_acao(status_bar))
+
+acao2 = primeiro_menu.addAction('Segunda Ação')
+acao2.setCheckable(True)
+# acao2.triggered.connect(lambda: exemplo_acao(status_bar))
+acao2.toggled.connect(lambda: exemplo_acao(status_bar))
 
 window.show()
 app1.exec()
