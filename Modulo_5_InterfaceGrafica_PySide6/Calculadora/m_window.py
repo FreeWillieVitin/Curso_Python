@@ -22,4 +22,3 @@ class MainWindow(QMainWindow):
 
     def addWidgetToVLayout(self, widget: QWidget):
         self.vLayout.addWidget(widget)
-        

@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit, QWidgetAction
 from m_window import MainWindow
 from display import Display, Info
 from PySide6.QtGui import QIcon
@@ -11,16 +11,14 @@ if __name__ == '__main__':
     window = MainWindow()
     display = Display()
     info = Info()
-    setupTheme('light')
+    setupTheme('auto')
 
     menu = window.menuBar()
     styleLayout = menu.addMenu('Estilo')
     escolheCor1 = styleLayout.addAction('Dark')
-    escolheCor1.setCheckable(True)
-    escolheCor1.triggered.connect(setupTheme('dark'))
+    escolheCor1.triggered.connect(lambda: setupTheme('dark'))
     escolheCor2 = styleLayout.addAction('Light')
-    escolheCor2.setCheckable(True)
-    escolheCor2.triggered.connect(setupTheme('light'))
+    escolheCor2.triggered.connect(lambda: setupTheme('light'))
 
     # escolheCor2 = styleLayout.addMenu('Light')
 
