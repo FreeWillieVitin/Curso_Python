@@ -8,15 +8,15 @@ import qdarktheme
 from var import PRIMARY_COLOR, ESCURA_PRIMARY_COLOR, MAIS_ESCURA_PRIMARY_COLOR
 
 qss = f"""
-    PushButton[cssClass="specialButton"] {{
+    Button[cssClass="specialButton"] {{
         color: #fff;
         background: {PRIMARY_COLOR};
     }}
-    PushButton[cssClass="specialButton"]:hover {{
+    Button[cssClass="specialButton"]:hover {{
         color: #fff;
         background: {ESCURA_PRIMARY_COLOR};
     }}
-    PushButton[cssClass="specialButton"]:pressed {{
+    Button[cssClass="specialButton"]:pressed {{
         color: #fff;
         background: {MAIS_ESCURA_PRIMARY_COLOR};
     }}
