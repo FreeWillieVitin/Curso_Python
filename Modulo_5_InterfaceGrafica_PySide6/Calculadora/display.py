@@ -13,7 +13,7 @@ class Display(QLineEdit):
         self.setMinimumHeight(BIG_FONT_SIZE * 2)
         self.setMinimumWidth(MIN_WIDTH)
         self.setAlignment(Qt.AlignmentFlag.AlignRight)
-        self.setTextMargins(*[TEXT_MARGIN for _ in range(4)])  # que é a mesma coisa que [TEXT_MARGIN, TEXT_MARGIN, TEXT_MARGIN, ]
+        self.setTextMargins(15, 7, 15, 7)  # que é a mesma coisa que [TEXT_MARGIN, TEXT_MARGIN, TEXT_MARGIN, ]
 
 
 class Info(QLabel):
