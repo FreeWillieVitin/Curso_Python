@@ -1,7 +1,10 @@
 from typing import Optional
 from PySide6.QtWidgets import QPushButton, QGridLayout
+from PySide6.QtCore import Slot
 from var import MEDIUM_FONT_SIZE
-from util import inNumOrDot
+from util import inNumOrDot, validNumber
+# from typing import TYPE_CHECKING
+from display import Display, Info
 
 
 class Button(QPushButton):
@@ -21,7 +24,7 @@ class Button(QPushButton):
 
 
 class ButtonGrid(QGridLayout):
-    def __init__(self, *args, **kwargs) -> None:
+    def __init__(self, tela: Display, info: Info, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
         self._grid_mask = [
@@ -32,6 +35,9 @@ class ButtonGrid(QGridLayout):
             ['1', '2', '3', '+'],
             ['±',  '0', '.', '='],
         ]
+        self.display = tela
+        self.info = info
+        self._getValue = ''
         self._makeGrid()
 
     def _makeGrid(self):
@@ -44,4 +50,32 @@ class ButtonGrid(QGridLayout):
                     btn.setProperty('cssClass', 'specialButton')
 
                 self.addWidget(btn, i, j)
-                btn.clicked.connect(lambda: print(123))
+                btnSlot = self.connectBtn(self.clickBtn, btn)
+                btn.clicked.connect(btnSlot)
+
+    def _connectClicked(self, button, slot):
+        
+
+    @property
+    def conta(self):
+        return self.conta
+
+    @conta.setter
+    def conta(self, valor):
+        self._getValue = valor
+        self.info.setText(valor)
+      
+    def connectBtn(self, func, *args, **kwargs):
+        @Slot(bool)
+        def realSlot(_):
+            func(*args, **kwargs)
+        return realSlot
+
+    def clickBtn(self, btn):
+        button_text = btn.text()
+        new_value = self.display.text() + button_text
+
+        if not validNumber(new_value):
+            return
+
+        self.display.insert(button_text)

@@ -11,8 +11,8 @@ if __name__ == '__main__':
     calcApp = QApplication()
     window = MainWindow()
     display = Display()
-    btnGrid = ButtonGrid()
-    info = Info()
+    info = Info('Aqui vai a conta')
+    btnGrid = ButtonGrid(display, info)
     setupTheme('dark')
 
 # Display da calculadora
