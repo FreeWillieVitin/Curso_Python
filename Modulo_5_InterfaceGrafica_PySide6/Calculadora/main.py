@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit, QWidgetAction
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLineEdit, QWidgetAction
 from m_window import MainWindow
 from display import Display, Info
 from PySide6.QtGui import QIcon
@@ -11,7 +11,7 @@ if __name__ == '__main__':
     calcApp = QApplication()
     window = MainWindow()
     display = Display()
-    info = Info('Aqui vai a conta')
+    info = Info('Sua Conta')
     btnGrid = ButtonGrid(display, info)
     setupTheme('dark')
 
