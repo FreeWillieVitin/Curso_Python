@@ -5,6 +5,7 @@ from var import MEDIUM_FONT_SIZE
 from util import inNumOrDot, validNumber
 # from typing import TYPE_CHECKING
 from display import Display, Info
+import math
 
 
 class Button(QPushButton):
@@ -29,7 +30,7 @@ class ButtonGrid(QGridLayout):
 
         self._grid_mask = [
             ['%', 'CE', 'C', '◀'],
-            ['¹/x', 'x²', '²√x', '÷'],
+            ['¹/x', '^', '²√x', '÷'],
             ['7', '8', '9', '*'],
             ['4', '5', '6', '-'],
             ['1', '2', '3', '+'],
@@ -80,9 +81,14 @@ class ButtonGrid(QGridLayout):
             self._connectClicked(button, self._clear)
             # self._connectClicked(button, cleaning)
 
-        if text in '+-/*':
+        if text in '+-*÷^':
             self._connectClicked(button, self.connectBtn(
                 self._operatorClick, button))
+
+        # if text == '÷':
+        #     text = '/'
+        #     self._connectClicked(button, self.connectBtn(
+        #         self._operatorClick, button))
 
         if text in '=':
             self._connectClicked(button, self._vle)
@@ -111,6 +117,10 @@ class ButtonGrid(QGridLayout):
 
     def _operatorClick(self, button):
         text = button.text()  # +-/*
+
+        # if text == '÷':
+        #     text = '/'
+
         displayText = self.display.text()  # Deverá ser meu número _left
         self.display.clear()  # Limpa o display
 
@@ -136,7 +146,12 @@ class ButtonGrid(QGridLayout):
         result = 0.0
 
         try:
-            result = eval(self.value)
+            if '÷' in self.value:
+                result = eval(self.value.replace('÷', '/'))
+            if '^' in self.value and self._leftValue is not None:
+                result = math.pow(self._leftValue, self._rightValue)
+            else:
+                result = eval(self.value)
         except ZeroDivisionError:
             print('Impossivel Dividir por 0')
 

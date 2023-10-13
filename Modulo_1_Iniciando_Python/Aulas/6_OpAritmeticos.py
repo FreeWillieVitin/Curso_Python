@@ -20,7 +20,7 @@ print(6.7 // 3.8)  # Faz a divisão e retorna a parte inteira do resultado
 print(2 ** 10)  # Faz a potenciação
 print(10 % 3)  # Faz a divisão e retorna o resto do resultado
 print((5+2)*10)  # Altera a ordem dos calculos
-print(10 % 2 == 0) # Um dos usos do módulo é para checar se um numero é par ou impar
+print(10 % 2 == 0)  # Um dos usos do módulo é para checar se um numero é par ou impar
 
 """
 Precendencia dos operadores
