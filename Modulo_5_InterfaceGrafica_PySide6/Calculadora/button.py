@@ -5,7 +5,8 @@ from var import MEDIUM_FONT_SIZE
 from util import inNumOrDot, validNumber
 # from typing import TYPE_CHECKING
 from display import Display, Info
-import math
+import math  # https://docs.python.org/pt-br/3/library/math.html
+from m_window import MainWindow
 
 
 class Button(QPushButton):
@@ -25,7 +26,7 @@ class Button(QPushButton):
 
 
 class ButtonGrid(QGridLayout):
-    def __init__(self, tela: Display, info: Info, *args, **kwargs) -> None:
+    def __init__(self, tela: Display, info: Info, window: 'MainWindow', *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
         self._grid_mask = [
@@ -38,6 +39,7 @@ class ButtonGrid(QGridLayout):
         ]
         self.display = tela
         self.info = info
+        self.window = window
         self._getValue = ''
         self._getValueInitial = 'Sua conta'
         self._leftValue = None
@@ -93,6 +95,9 @@ class ButtonGrid(QGridLayout):
         if text in '=':
             self._connectClicked(button, self._vle)
 
+        if text in '◀':
+            self._connectClicked(button, self.display.backspace)
+
     def connectBtn(self, func, *args, **kwargs):
         @ Slot(bool)
         def realSlot(_):
@@ -126,6 +131,7 @@ class ButtonGrid(QGridLayout):
 
         # Se a pessoa clicou no operador sem digitar nenhum número não faz nada
         if not validNumber(displayText) and self._leftValue is None:
+            self._showError('Você não digitou nada')
             return
 
         if self._leftValue is None:
@@ -143,19 +149,38 @@ class ButtonGrid(QGridLayout):
         # if self._rightValue is None:
         self._rightValue = float(displayText)
         self.value = f'{self._leftValue} {self._opValue} {self._rightValue}'
-        result = 0.0
+        result = 'Erro'
 
         try:
             if '÷' in self.value:
                 result = eval(self.value.replace('÷', '/'))
-            if '^' in self.value and self._leftValue is not None:
+            if '^' in self.value and isinstance(self._leftValue, float):
                 result = math.pow(self._leftValue, self._rightValue)
             else:
                 result = eval(self.value)
         except ZeroDivisionError:
-            print('Impossivel Dividir por 0')
+            self._showError('Impossivel Dividir por 0')
+        except OverflowError:
+            self._showError('Essa conta não pode ser realizada')
 
         self.display.clear()
         self.info.setText(f'{self.value} = {result}')
         self._leftValue = result
         self._rightValue = None
+
+        if result == 'Erro':
+            self._leftValue = None
+
+    def _showError(self, error):
+        msgBox = self.window.msgBox()
+        msgBox.setText(error)
+        msgBox.setIcon(msgBox.Icon.Information)
+        msgBox.setStandardButtons(msgBox.StandardButton.Ok | msgBox.StandardButton.Cancel)
+
+        result = msgBox.exec()
+
+        if result == msgBox.StandardButton.Ok:
+            print('Usuário digitou OK')
+        elif result == msgBox.StandardButton.Cancel:
+            print('Usuário Cancelou')
+        msgBox.exec()

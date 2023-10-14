@@ -12,7 +12,7 @@ if __name__ == '__main__':
     window = MainWindow()
     display = Display()
     info = Info('Sua Conta')
-    btnGrid = ButtonGrid(display, info)
+    btnGrid = ButtonGrid(display, info, window)
     setupTheme('dark')
 
 # Display da calculadora
