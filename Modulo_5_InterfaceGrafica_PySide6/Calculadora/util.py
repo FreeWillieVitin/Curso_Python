@@ -16,4 +16,8 @@ def validNumber(string: str):
         valid = False
     return valid
 
+
+def isEmpty(string: str):
+    return len(string) == 0
+
 # print(NUM_OR_DOT_REGEX.search('9'))

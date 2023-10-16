@@ -31,6 +31,7 @@ if __name__ == '__main__':
     window.addWidgetToVLayout(display)
     window.vLayout.addLayout(btnGrid)
     display.setPlaceholderText('Números Aqui')
+
     # window.addWidgetToVLayout(Display('Display 2'))
     # window.addWidgetToVLayout(Display('Display 3'))
 

@@ -59,6 +59,11 @@ class ButtonGrid(QGridLayout):
         self.info.setText(valor)
 
     def _makeGrid(self):
+        self.display.sigCalc.connect(lambda: print(123))
+        self.display.sigDel.connect(self.display.backspace)
+        self.display.sigClear.connect(self.display.clear)
+        self.display.sigNum.connect(self.display.insert)
+
         for i, row in enumerate(self._grid_mask):
             for j, btn_txt in enumerate(row):
                 btn = Button(btn_txt)
@@ -92,10 +97,10 @@ class ButtonGrid(QGridLayout):
         #     self._connectClicked(button, self.connectBtn(
         #         self._operatorClick, button))
 
-        if text in '=':
+        if text == '=':
             self._connectClicked(button, self._vle)
 
-        if text in '◀':
+        if text == '◀':
             self._connectClicked(button, self.display.backspace)
 
     def connectBtn(self, func, *args, **kwargs):
@@ -112,6 +117,7 @@ class ButtonGrid(QGridLayout):
             return
 
         self.display.insert(button_text)
+        self.display.setFocus()
 
     def _clear(self):
         self._leftValue = None
