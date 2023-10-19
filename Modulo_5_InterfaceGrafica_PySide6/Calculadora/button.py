@@ -66,11 +66,12 @@ class ButtonGrid(QGridLayout):
         )
 
     def _makeGrid(self):
-        self.display.sigCalc.connect(self.vouApagarVocê)
+        self.display.sigCalc.connect(self._vle)
         self.display.sigDel.connect(self.display.backspace)
-        self.display.sigClear.connect(self.display.clear)
+        self.display.sigClear.connect(self._clear)
         self.display.sigNum.connect(self.display.insert)
-        self.display.inputPress.connect(self.vouApagarVocê)
+        self.display.inputPress.connect(self.clickBtn)
+        self.display.sigOperator.connect(self._operatorClick)
 
         for i, row in enumerate(self._grid_mask):
             for j, btn_txt in enumerate(row):
@@ -82,7 +83,7 @@ class ButtonGrid(QGridLayout):
                     self._configSpecialBtn(btn)
 
                 self.addWidget(btn, i, j)
-                btnSlot = self.connectBtn(self.clickBtn, btn)
+                btnSlot = self.connectBtn(self.clickBtn, btn_txt)
                 self._connectClicked(btn, btnSlot)
 
     def _connectClicked(self, button, slot):
@@ -117,16 +118,16 @@ class ButtonGrid(QGridLayout):
             func(*args, **kwargs)
         return realSlot
 
-    def clickBtn(self, btn):
-        button_text = btn.text()
-        new_value = self.display.text() + button_text
+    def clickBtn(self, txt):
+        new_value = self.display.text() + txt
 
         if not validNumber(new_value):
             return
 
-        self.display.insert(button_text)
+        self.display.insert(txt)
         self.display.setFocus()
 
+    @ Slot()
     def _clear(self):
         self._leftValue = None
         self._rightValue = None
@@ -134,8 +135,8 @@ class ButtonGrid(QGridLayout):
         self.value = self._getValueInitial
         self.display.clear()
 
-    def _operatorClick(self, button):
-        text = button.text()  # +-/*
+    def _operatorClick(self, txt):
+        # text = button.text()  # +-/*
 
         # if text == '÷':
         #     text = '/'
@@ -151,9 +152,10 @@ class ButtonGrid(QGridLayout):
         if self._leftValue is None:
             self._leftValue = float(displayText)
 
-        self._opValue = text
+        self._opValue = txt
         self.value = f'{self._leftValue} {self._opValue} ??'
 
+    @ Slot()
     def _vle(self):
         displayText = self.display.text()
 
