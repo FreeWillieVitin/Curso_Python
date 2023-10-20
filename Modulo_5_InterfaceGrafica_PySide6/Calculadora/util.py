@@ -1,6 +1,6 @@
 import re
 
-NUM_OR_DOT_REGEX = re.compile(r'^[0-9.±]$')
+NUM_OR_DOT_REGEX = re.compile(r'^[0-9.]$')
 
 
 def inNumOrDot(string: str):
@@ -19,5 +19,14 @@ def validNumber(string: str):
 
 def isEmpty(string: str):
     return len(string) == 0
+
+
+def convertNumber(string: str):
+    Number = float(string)
+
+    if Number.is_integer():
+        Number = int(Number)
+
+    return Number
 
 # print(NUM_OR_DOT_REGEX.search('9'))

@@ -2,7 +2,7 @@ from typing import Optional
 from PySide6.QtWidgets import QPushButton, QGridLayout
 from PySide6.QtCore import Slot
 from var import MEDIUM_FONT_SIZE
-from util import inNumOrDot, validNumber
+from util import inNumOrDot, validNumber, convertNumber
 # from typing import TYPE_CHECKING
 from display import Display, Info
 import math  # https://docs.python.org/pt-br/3/library/math.html
@@ -70,7 +70,7 @@ class ButtonGrid(QGridLayout):
         self.display.sigDel.connect(self.display.backspace)
         self.display.sigClear.connect(self._clear)
         self.display.sigNum.connect(self.display.insert)
-        self.display.inputPress.connect(self.clickBtn)
+        self.display.inputPress.connect(self._clickBtn)
         self.display.sigOperator.connect(self._operatorClick)
 
         for i, row in enumerate(self._grid_mask):
@@ -83,7 +83,7 @@ class ButtonGrid(QGridLayout):
                     self._configSpecialBtn(btn)
 
                 self.addWidget(btn, i, j)
-                btnSlot = self.connectBtn(self.clickBtn, btn_txt)
+                btnSlot = self.connectBtn(self._clickBtn, btn_txt)
                 self._connectClicked(btn, btnSlot)
 
     def _connectClicked(self, button, slot):
@@ -97,9 +97,14 @@ class ButtonGrid(QGridLayout):
             self._connectClicked(button, self._clear)
             # self._connectClicked(button, cleaning)
 
+        if text == '±':
+            # button.clicked.connect(self.display.clear)
+            self._connectClicked(button, self._negativeNumber)
+            # self._connectClicked(button, cleaning)
+
         if text in '+-*÷^':
             self._connectClicked(button, self.connectBtn(
-                self._operatorClick, button))
+                self._operatorClick, text))
 
         # if text == '÷':
         #     text = '/'
@@ -112,13 +117,25 @@ class ButtonGrid(QGridLayout):
         if text == '◀':
             self._connectClicked(button, self.display.backspace)
 
+    @ Slot()
     def connectBtn(self, func, *args, **kwargs):
         @ Slot(bool)
         def realSlot(_):
             func(*args, **kwargs)
         return realSlot
 
-    def clickBtn(self, txt):
+    @ Slot()
+    def _negativeNumber(self):
+        displayText = self.display.text()
+
+        if not validNumber(displayText):
+            return
+
+        newNumber = convertNumber(displayText) * -1
+        self.display.setText(str(newNumber))
+
+    @ Slot()
+    def _clickBtn(self, txt):
         new_value = self.display.text() + txt
 
         if not validNumber(new_value):
@@ -135,6 +152,7 @@ class ButtonGrid(QGridLayout):
         self.value = self._getValueInitial
         self.display.clear()
 
+    @ Slot()
     def _operatorClick(self, txt):
         # text = button.text()  # +-/*
 
@@ -150,7 +168,7 @@ class ButtonGrid(QGridLayout):
             return
 
         if self._leftValue is None:
-            self._leftValue = float(displayText)
+            self._leftValue = convertNumber(displayText)
 
         self._opValue = txt
         self.value = f'{self._leftValue} {self._opValue} ??'
@@ -163,7 +181,7 @@ class ButtonGrid(QGridLayout):
             return
 
         # if self._rightValue is None:
-        self._rightValue = float(displayText)
+        self._rightValue = convertNumber(displayText)
         self.value = f'{self._leftValue} {self._opValue} {self._rightValue}'
         result = 'Erro'
 
