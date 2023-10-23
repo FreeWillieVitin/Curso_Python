@@ -95,21 +95,24 @@ class ButtonGrid(QGridLayout):
         if text == 'C':
             # button.clicked.connect(self.display.clear)
             self._connectClicked(button, self._clear)
+            self.display.setFocus()
             # self._connectClicked(button, cleaning)
 
         if text == '±':
             # button.clicked.connect(self.display.clear)
             self._connectClicked(button, self._negativeNumber)
+            self.display.setFocus()
             # self._connectClicked(button, cleaning)
 
         if text in '+-*÷^':
             self._connectClicked(button, self.connectBtn(
                 self._operatorClick, text))
+            self.display.setFocus()
 
-        # if text == '÷':
-        #     text = '/'
-        #     self._connectClicked(button, self.connectBtn(
-        #         self._operatorClick, button))
+        if text == '÷':
+            text = '/'
+            self._connectClicked(button, self.connectBtn(
+                self._operatorClick, text))
 
         if text == '=':
             self._connectClicked(button, self._vle)
@@ -133,6 +136,7 @@ class ButtonGrid(QGridLayout):
 
         newNumber = convertNumber(displayText) * -1
         self.display.setText(str(newNumber))
+        self.display.setFocus()
 
     @ Slot()
     def _clickBtn(self, txt):
@@ -151,6 +155,7 @@ class ButtonGrid(QGridLayout):
         self._opValue = None
         self.value = self._getValueInitial
         self.display.clear()
+        self.display.setFocus()
 
     @ Slot()
     def _operatorClick(self, txt):
@@ -164,6 +169,7 @@ class ButtonGrid(QGridLayout):
 
         # Se a pessoa clicou no operador sem digitar nenhum número não faz nada
         if not validNumber(displayText) and self._leftValue is None:
+            self.display.setFocus()
             self._showError('Você não digitou nada')
             return
 
@@ -177,7 +183,9 @@ class ButtonGrid(QGridLayout):
     def _vle(self):
         displayText = self.display.text()
 
-        if not validNumber(displayText):
+        if not validNumber(displayText) or self._leftValue is None:
+            self.display.setFocus()
+            self.display.clear()
             return
 
         # if self._rightValue is None:
@@ -188,8 +196,9 @@ class ButtonGrid(QGridLayout):
         try:
             if '÷' in self.value:
                 result = eval(self.value.replace('÷', '/'))
-            if '^' in self.value and isinstance(self._leftValue, float):
+            if '^' in self.value and isinstance(self._leftValue, int | float):
                 result = math.pow(self._leftValue, self._rightValue)
+                result = convertNumber(str(result))
             else:
                 result = eval(self.value)
         except ZeroDivisionError:
