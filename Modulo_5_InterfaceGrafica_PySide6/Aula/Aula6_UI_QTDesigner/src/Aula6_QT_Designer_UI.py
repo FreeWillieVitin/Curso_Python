@@ -68,9 +68,7 @@ class Ui_PrimeiraJanela(object):
 
         self.GridName.addWidget(self.btn, 0, 2, 1, 1)
 
-
         self.gridLayout.addLayout(self.GridName, 1, 0, 1, 1)
-
 
         self.verticalLayout.addLayout(self.gridLayout)
 
@@ -95,4 +93,3 @@ class Ui_PrimeiraJanela(object):
         self.LineName.setPlaceholderText(QCoreApplication.translate("PrimeiraJanela", u"Digite Seu Nome Aqui", None))
         self.btn.setText(QCoreApplication.translate("PrimeiraJanela", u"Enviar", None))
     # retranslateUi
-
