@@ -11,7 +11,7 @@ with open('C:\\Users\\HSVP\\Desktop\\Escala Final de Semana.pdf', 'rb') as arqui
 
     linhas = page_text.split('\n')
 
-    # linhas['VICTOR HUGO JURCZYSZYN  Informática  08:00h às 12:00h  '] = 'VICTOR HUGO JURCZYSZYN  Informática  10:00h às 12:00h  '
+    # linhas['VICTOR HUGO JURCZYSZYN  Informática  08:00h às 12:00h  '] = 'VICTOR HUGO JURCZYSZYN  Informática  10:00h às 12:00h'
 
 
 print(linhas)
