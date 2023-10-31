@@ -22,14 +22,14 @@ print('Idade: ', idade)
 print('Altura: ', altura)
 print('É maior:', e_maior)
 print(idade * altura)
-#Exercício de variáveis
-#Calculo de IMC
+#  Exercício de variáveis
+#  Calculo de IMC
 print(nome, 'você tem', idade, 'e seu imc é', imc)
 
 # Treinando variável
 print('Nome:', nome)
 print('Sobrenome:', sobrenome)
-print('Idade:', idade),
+print('Idade:', idade)
 print('Ano de nascimento:', ano_nascimento)
 print('É maior de idade?', e_maior)
 print('Altura em metros:', altura)
@@ -40,7 +40,7 @@ Muitas condições no mesmo if (ruim)
     <- Contagem de complexidade (ruim)
 
 Abaixo temos uma demonstração de codigo mais limpo, ele ocupa algumas linhas a mais devido a criação
-das variáveis, porém para quem está lendo e tem um pouco de conhecimento fica muito melhor de ler e 
+das variáveis, porém para quem está lendo e tem um pouco de conhecimento fica muito melhor de ler e
 interpretar
 """
 velocidade = 61  # velocidade atual do carro

@@ -41,4 +41,3 @@ peso = 84
 imc = peso / (altura * altura)
 
 print('Seu nome é', nome, 'tem', altura, 'metros, pesa', peso, 'quilos, e seu imc é', imc)
-

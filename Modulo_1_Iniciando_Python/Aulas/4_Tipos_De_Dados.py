@@ -7,7 +7,7 @@ bool - booleano/lógico - true/false
 
 Extra-------------
 Atalho para comentar várias linhas ao mesmo tempo
-ctrl + /
+ctrl + ;
 
 Tudo em python é um objeto
 """
@@ -39,6 +39,13 @@ temos algumas formas de corrigir estas imprecisões
 num1 = 0.1
 num2 = 0.7
 num3 = num1 + num2
-print(num3) # A soma deste valor retorna um número de valor impreciso = 0.7999999999999999, quando obviamente deveria retornar 0.80
-print(f'{num3:.2f}') # Ao tratar com a formatação f, o problema de imprecisão é corrigido e o resultado da operação torna-se = 0.80
-print(round(num3, 2)) # Outra forma de tratar esse erro é usando a função round, porém com essa função o numero será totalmente arredondado e nessa caso retorna = 0.8
+
+# A soma deste valor retorna um número de valor impreciso = 0.7999999999999999, quando obviamente deveria retornar 0.80
+print(num3)
+
+# Ao tratar com a formatação f, o problema de imprecisão é corrigido e o resultado da operação torna-se = 0.80
+print(f'{num3:.2f}')
+
+# Outra forma de tratar esse erro é usando a função round, porém com essa função o numero será totalmente arredondado e nessa
+# caso retorna = 0.8
+print(round(num3, 2))

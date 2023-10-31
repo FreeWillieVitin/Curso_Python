@@ -8,5 +8,3 @@ print('Victor', 'Hugo', sep='-', end='#########')  # end='', insere algo ao  fim
 # Exercício 01- Imprimir o CPF usando os separadores
 print(111, 318, 679, sep='.', end='-')
 print(80)
-
-
