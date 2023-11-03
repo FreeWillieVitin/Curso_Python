@@ -10,12 +10,12 @@ Não é necessario repetir a variavel para realizar operações
 Ex: a = a + 1 -> pode ser substituido por a += 1
 """
 # -------------------------------------------------------------------------------------------------------------------------
-x = 1 # Define a primeira variavel
-while x <= 5: # Enquanto o valor de x for menor que 5 a operação se repetirá
-    y = 1 # Define a variavel y e reseta ela quando o proximo laço chegar ao fim
-    while y <= 5: # Enquanto o valor de y for menor que 5 a operação se repetirá
-        print(f'{x= } {y= } ') # Mostra em tela os valores de suas repetições
-        y += 1 # Soma mais 1 a variavel y até q ela chegue ao valor de 5
+x = 1  # Define a primeira variavel
+while x <= 5:  # Enquanto o valor de x for menor que 5 a operação se repetirá
+    y = 1  # Define a variavel y e reseta ela quando o proximo laço chegar ao fim
+    while y <= 5:  # Enquanto o valor de y for menor que 5 a operação se repetirá
+        print(f'{x= } {y= } ')  # Mostra em tela os valores de suas repetições
+        y += 1  # Soma mais 1 a variavel y até q ela chegue ao valor de 5
     x += 1  # Soma mais 1 a variavel x até que ela chegue ao valor de 5
 
 print('Acabou!')
@@ -33,18 +33,18 @@ while x < 10:
 print('Acabou')
 
 # -------------------------------------------------------------------------------------------------------------------------
-x = 0 # Variável de valor 0
+x = 0  # Variável de valor 0
 
-while x < 10: # Enquanto a variável for menor que 10
-    x += 1 # Soma mais 1 a variável
+while x < 10:  # Enquanto a variável for menor que 10
+    x += 1  # Soma mais 1 a variável
 
-    if x == 3: # Quando a soma chegar em 3
-        print('Não vou mostrar o 3') # Será exibido essa mensagem na tela
-        continue  # Então o continue pulará a exibição do valor 3 porém não vai parar a execução, seguirá normalmente até o fim 
+    if x == 3:  # Quando a soma chegar em 3
+        print('Não vou mostrar o 3')  # Será exibido essa mensagem na tela
+        continue  # Então o continue pulará a exibição do valor 3 porém não vai parar a execução, seguirá normalmente até o fim
 
-    print(x) # Exibe cada novo valor do laço
+    print(x)  # Exibe cada novo valor do laço
 
-print('Acabou') # Quando chegar no 10 termina a execução com essa mensagem
+print('Acabou')  # Quando chegar no 10 termina a execução com essa mensagem
 
 # -------------------------------------------------------------------------------------------------------------------------
 x = 0

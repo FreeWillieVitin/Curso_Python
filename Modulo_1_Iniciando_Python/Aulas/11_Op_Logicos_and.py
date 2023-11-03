@@ -32,7 +32,3 @@ if usu_bd == usuario and senha_bd == senha:
     print('Você acessou o sistema')
 else:
     print('Usuario ou senh incorretos.')
-
-
-
-

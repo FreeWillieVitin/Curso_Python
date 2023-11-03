@@ -34,16 +34,16 @@ Ex.: 0>-100,.1f
 < - Direita
 ^ - Centro
 
-Conversion flags - !r !s !a 
+Conversion flags - !r !s !a
 """
 
 variavel = 'ABC'
-print(f'{variavel}') # Retorna o valor da variavel
-print(f'{variavel: >10}') # Retorna a variavel com 10 strings vazias a esquerda
-print(f'{variavel: <10}.') # Retorna a variavel com 10 strings vazias a direita
-print(f'{variavel: ^10}.') # Retona a variavel entre strings vazias
+print(f'{variavel}')  # Retorna o valor da variavel
+print(f'{variavel: >10}')  # Retorna a variavel com 10 strings vazias a esquerda
+print(f'{variavel: <10}.')  # Retorna a variavel com 10 strings vazias a direita
+print(f'{variavel: ^10}.')  # Retona a variavel entre strings vazias
 print(f'{1000.4873648123746:0=+10,.1f}')
-print(f'O hexadecimal de 1500 é {1500:08X}') # Retorna a forma hexadecimal com 8 caracteres maiusculos
+print(f'O hexadecimal de 1500 é {1500:08X}')  # Retorna a forma hexadecimal com 8 caracteres maiusculos
 print(f'{variavel!r}')
 
 num1 = 10
@@ -66,7 +66,7 @@ print(f'{num_3:0^10}')
 
 #  Uso de indices
 nome = 'victor'
-nome = nome.ljust(20,'#')  # Retorna 20 caracteres justificados a esquerda da palavra
+nome = nome.ljust(20, '#')  # Retorna 20 caracteres justificados a esquerda da palavra
 sobrenome = 'Hugo'
 nome_formatado = '{0:$^50} {1:#^50}'.format(nome, sobrenome)  # adiciona caracteres as strings
 print(nome_formatado)
@@ -83,12 +83,18 @@ que numeram as chaves e nomeando as variaveis forma chamada de parametros nomead
 a = 'A'
 b = 'B'
 c = 1.1
-string = 'a={}, b={}, c={}' # Nesta forma retorna os valores conforme o posicionamento da variavel em relação a chave
-formato = string.format(a, b, c) # Ao trabalhar com esse tipo de formatação não podemos repetir valores a não ser que seja repetida a variavel
-indice = 'a={0}, b={1}, c={2}' # Nesta forma trabalhamos com numeração dos campos, cada variavel representa um indice iniciado em 0
-formato_2 = indice.format(a, b, c) # Então podemos apenas numerar as chaves, conforme a ordem das variaveis podendo repetir os indices
-param = 'a={val1}, b={val2}, c={val3}' # E por ultimo temos os parametros nomeados que nada mais é do que nomear as variaveis
-formato_3= param.format(val1=a, val2=b, val3=c) # Assim inserimos nas chaves os nomes dados para identificar cada variavel
+# Nesta forma retorna os valores conforme o posicionamento da variavel em relação a chave
+string = 'a={}, b={}, c={}'
+# Ao trabalhar com esse tipo de formatação não podemos repetir valores a não ser que seja repetida a variavel
+formato = string.format(a, b, c)
+# Nesta forma trabalhamos com numeração dos campos, cada variavel representa um indice iniciado em 0
+indice = 'a={0}, b={1}, c={2}'
+# Então podemos apenas numerar as chaves, conforme a ordem das variaveis podendo repetir os indices
+formato_2 = indice.format(a, b, c)
+# E por ultimo temos os parametros nomeados que nada mais é do que nomear as variaveis
+param = 'a={val1}, b={val2}, c={val3}'
+# Assim inserimos nas chaves os nomes dados para identificar cada variavel
+formato_3 = param.format(val1=a, val2=b, val3=c)
 
 print(formato)
 print(formato_2)
@@ -107,6 +113,4 @@ nome = 'Victor'
 preco = 1000.95897643
 variavel = '%s, o preço é R$%.2f' % (nome, preco)
 print(variavel)
-print('O hexidecimal de %d é %x' % (15,15))
-
-
+print('O hexidecimal de %d é %x' % (15, 15))

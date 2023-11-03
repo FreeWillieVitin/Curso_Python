@@ -6,18 +6,18 @@ PySide6.QtWidgets -> Onde estão os widgets do PySide6
 """
 from PySide6.QtWidgets import QApplication, QPushButton, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QMainWindow
 
-app = QApplication()
+# app = QApplication()
 
-# Exibe um botão na tela com um texto dentro
-botao = QPushButton('Marieli Amor da Minha Vida')
-# Estiliza o botão usando comandos CSS
-botao.setStyleSheet('font-size: 40px; color: Pink; background-color: blue')
-botao.show()  # Adiciona o widget na hierarquia e exibe a janela
+# # Exibe um botão na tela com um texto dentro
+# botao = QPushButton('Marieli Amor da Minha Vida')
+# # Estiliza o botão usando comandos CSS
+# botao.setStyleSheet('font-size: 40px; color: Pink; background-color: blue')
+# botao.show()  # Adiciona o widget na hierarquia e exibe a janela
 
-botao2 = QPushButton('Botão2')
-botao2.show()
+# botao2 = QPushButton('Botão2')
+# botao2.show()
 
-app.exec()  # Executa a aplicação
+# app.exec()  # Executa a aplicação
 # --------------------------------------------------------------------------------------------------------------------------------
 
 """
@@ -38,13 +38,14 @@ Os processos da aplicação - QMainWindow e centralWidget
 """
 
 app1 = QApplication()  # Indica um inicializador de aplicação para a variável
-window = QMainWindow()
+window = QMainWindow()  # Cria a tela principal e armazena na variável
 # O QWidget seria como um formulário onde é posicionado os itens e exibido ao usuário
 central_widget = QWidget()
 window.setCentralWidget(central_widget)
-window.setWindowTitle('Meu primeiro programa')
+window.setWindowTitle('Meu primeiro programa')  # Define o Título para a janela
 
-botao3 = QPushButton('Marieli Amor da Minha Vida')
+botao3 = QPushButton('Marieli Amor da Minha Vida')  # Classe onde fica a estrutura de um botão
+# No método setStyleSheet é personalizado o botão utilizando comandos CSS
 botao3.setStyleSheet('font-size: 40px; color: Pink; background-color: blue')
 
 botao4 = QPushButton('Botão')
@@ -68,9 +69,11 @@ layout.addWidget(botao5, 3, 1, 1, 2)
 
 # Barra de Status
 status_bar = window.statusBar()
-status_bar.showMessage('Barra de Status')
+status_bar.showMessage('Barra de Status')  # Exibe um texto fixo na barra de status
 
 
+# O que temos abaixo é um slot, slot são métodos ou funções que são que é chamado em resposta a um Signal, basicamente são ações
+# que o sistema irá executar, no caso abaixo, quando o botão for clicado, a ação de mudar a mensagem da barra de status executará
 def exemplo_acao(status_bar):
     status_bar.showMessage('O slot foi executado')
 
