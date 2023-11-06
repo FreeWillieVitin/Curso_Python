@@ -83,14 +83,15 @@ Trabalhando com classes e heranças
 app2 = QApplication()
 
 
-class MyWindow(QMainWindow):
-    def __init__(self, parent=None):
-        super().__init__(parent)
+# Podemos herdar outras classes e termos a nossa própria classe para poder ter mais controle e mais organização da aplicação
+class MyWindow(QMainWindow):  # Classe própria MyWindow que herda os atributos da classe do PySide6 QMainWIndow
+    def __init__(self, parent=None):  # Definindo o método construtor init
+        super().__init__(parent)  # Chama o método contrutor da classe herdada(QMainWIndow)
 
-        self.central_widget = QWidget()
+        self.central_widget = QWidget()  # Criamos nossa Widget que é onde haverá os requisitos de interação do usúario
 
-        self.setCentralWidget(self.central_widget)
-        self.setWindowTitle('Meu primeiro programa')
+        self.setCentralWidget(self.central_widget)  # Definimos qual o widget que será usado na tela principal
+        self.setWindowTitle('Meu primeiro programa')   # Define um título para a janela
 
         self.botao3 = self.make_btn('Marieli Amor da Minha Vida')
         self.botao3.clicked.connect(self.segundo_slot)  # type: ignore

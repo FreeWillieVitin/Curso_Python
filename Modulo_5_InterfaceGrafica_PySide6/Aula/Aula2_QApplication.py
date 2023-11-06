@@ -79,9 +79,13 @@ def exemplo_acao(status_bar):
 
 
 # MenuBar
+# Adiciona uma barra de menu na QMainWindow
 menu = window.menuBar()
+# E dentro do menuBar usamos a função add menu para adicionar abas nele
 primeiro_menu = menu.addMenu('Primeiro Menu')
+# A função addAction cria um tipo de botão/aba do menu está lá como uma abinha, porém pode executar alguma ação.
 acao = primeiro_menu.addAction('Primeira Ação')
+# Nesse caso ela irá disparar a ação que foi criada para o slot logo mais acima
 acao.triggered.connect(lambda: exemplo_acao(status_bar))
 
 window.show()
