@@ -93,46 +93,46 @@ class MyWindow(QMainWindow):  # Classe própria MyWindow que herda os atributos 
         self.setCentralWidget(self.central_widget)  # Definimos qual o widget que será usado na tela principal
         self.setWindowTitle('Meu primeiro programa')   # Define um título para a janela
 
-        self.botao3 = self.make_btn('Marieli Amor da Minha Vida')
-        self.botao3.clicked.connect(self.segundo_slot)  # type: ignore
+        self.botao3 = self.make_btn('Marieli Amor da Minha Vida')  # Usa a função criada abaixo para criar um botão
+        self.botao3.clicked.connect(self.segundo_slot)  # type: ignore  # Conecta o botão ao slot
 
         self.botao4 = self.make_btn('Botão')
 
         self.botao5 = self.make_btn('Botão2')
 
-        self.Mylayout = QGridLayout()
-        self.central_widget.setLayout(self.Mylayout)
+        self.Mylayout = QGridLayout()  # Define o tipo do layout, nesse caso usamos o layout tipo grid
+        self.central_widget.setLayout(self.Mylayout)  # Indica para o widget qual o layout que se posicionaram
 
-        self.Mylayout.addWidget(self.botao3, 1, 2, 1, 1)
-        self.Mylayout.addWidget(self.botao4, 1, 1, 1, 1)
-        self.Mylayout.addWidget(self.botao5, 3, 1, 1, 2)
+        self.Mylayout.addWidget(self.botao3, 1, 2, 1, 1)  # Adiciona algo ao layout, o primeiro parâmetor é o que será adicionado
+        self.Mylayout.addWidget(self.botao4, 1, 1, 1, 1)  # No caso é passada a variável do botão e a seguir é o posicionamento
+        self.Mylayout.addWidget(self.botao5, 3, 1, 1, 2)  # Linha, Coluna, quantidade de linhas ocupadas e quantidade de colunas
 
-        # Barra de Status
+        # Barra de Status - Abaixo cria e configura a barra de status
         self.status_bar = self.statusBar()
         self.status_bar.showMessage('Barra de Status')
 
-        # MenuBar
+        # MenuBar - Cria e configura a barra de menu
         self.menu = self.menuBar()
-        self.primeiro_menu = self.menu.addMenu('Primeiro Menu')
-        self.acao = self.primeiro_menu.addAction('Primeira Ação')
-        self.acao.triggered.connect(self.exemplo_acao)  # type: ignore
+        self.primeiro_menu = self.menu.addMenu('Primeiro Menu')  # Cria a aba
+        self.acao = self.primeiro_menu.addAction('Primeira Ação')  # Cria a primeira opção de ação da aba criada acima
+        self.acao.triggered.connect(self.exemplo_acao)  # type: ignore  #  Conecta ela ao slot
 
-        self.acao2 = self.primeiro_menu.addAction('Segunda Ação')
-        self.acao2.setCheckable(True)
-        self.acao2.toggled.connect(self.segundo_slot)  # type: ignore
-        self.acao2.hovered.connect(self.segundo_slot)  # type: ignore
+        self.acao2 = self.primeiro_menu.addAction('Segunda Ação')  # Cria a segunda opção de ação da aba
+        self.acao2.setCheckable(True)  # Define ela como um botão de checagem, ou seja, ao ser clicado mostrada um sinal de oky
+        self.acao2.toggled.connect(self.segundo_slot)  # type: ignore  # Conecta ao slot
+        self.acao2.hovered.connect(self.segundo_slot)  # type: ignore Executa o slot apenas passando o mouse sem clicar
 
-    @Slot()
-    def exemplo_acao(self):
+    @Slot()  # Indica que isso é um slot
+    def exemplo_acao(self):  # Slot que mostra mensagem na barra de status
         self.status_bar.showMessage('O slot foi executado')
 
     @Slot()
-    def segundo_slot(self):
+    def segundo_slot(self):  # Slot que informa se a segunda opção do menu está checado ou não
         print('Slot Está marcado', self.acao2.isChecked())
 
-    def make_btn(self, text):
-        btn = QPushButton(text)
-        btn.setStyleSheet(
+    def make_btn(self, text):  # Isso é a função que cria o botão
+        btn = QPushButton(text)  # Define a variável como tipo botão que recebe um texto como parâmetro
+        btn.setStyleSheet(  # Personaliza o botão com comando CSS
             'font-size: 40px; color: Pink; background-color: blue')
         return btn
 

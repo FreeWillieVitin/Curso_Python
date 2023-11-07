@@ -85,9 +85,10 @@ identificador unico que pode ser obtido com a funcao id()
 # Exemplo de dado imutável
 # A variavel a está associada com o objeto int de valor 94, que possui o identificador 2399522393232
 a = 94
-id(a) # 2399522393232
+id(a)  # 2399522393232
 
-# Como um int e imutavel quando fazemos o incremento da variavel a, o que ocorre na verdade e a criacao de um novo objeto do tipo int que sera associado com a.
+# Como um int e imutavel quando fazemos o incremento da variavel a, o que ocorre na verdade e a criacao de um novo objeto do tipo 
+# int que sera associado com a.
 
 a += 1
 a
