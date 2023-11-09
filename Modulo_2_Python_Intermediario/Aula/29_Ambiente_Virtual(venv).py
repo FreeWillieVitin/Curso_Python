@@ -27,7 +27,7 @@ Como Ativar o ambiente virtual no windows
 # Executar a venv ao iniciar o VS-CODE = SetExecutionPolicy Unrestricted -Force
 """
 Como Ativar o ambiente virtual no Linux
-Qualquer um dos modos abaixo executa
+Qlquer um dos modos abaixo executa
 """
 # . NomeDoAmbienteVirtual/bin/activate
 # source NomeDoAmbienteVirtual/bin/activate
