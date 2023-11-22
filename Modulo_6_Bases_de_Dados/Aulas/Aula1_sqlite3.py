@@ -55,8 +55,25 @@ cursor.execute(
 )
 con.commit()
 
-cursor.close()  # Fecha o cursor
-con.close()  # Fecha a conexão com o banco
 
 if __name__ == '__main__':
     print(insert_date)
+
+    cursor.execute(f'delete from {TABLE_NAME} where id = 3')
+    con.commit()
+
+    cursor.execute(
+        f'update {TABLE_NAME} '
+        'set name = "Victor", weight = 86.20 '
+        'where id = 4'
+    )
+    con.commit()
+
+    cursor.execute(f'select * from {TABLE_NAME}')
+
+    for row in cursor.fetchall():
+        _id, nome, peso = row
+        print(_id, nome, peso)
+
+    cursor.close()  # Fecha o cursor
+    con.close()  # Fecha a conexão com o banco
