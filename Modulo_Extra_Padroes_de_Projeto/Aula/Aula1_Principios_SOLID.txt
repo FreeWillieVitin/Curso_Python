@@ -1,0 +1,25 @@
+Princípios do design orientado a objeto (SOLID)
+ ________________________________________________________________________
+|                                                                        |
+|Single Responsibility Principle - (Princípio da responsabilidade única) | 
+|Open/Closed Principle - (Princípio do aberto e fechado)                 |
+|Liskov Substitution Principle - (Princípio da substituição de Liskov)   |
+|Interface Segregation Principle - (Princípio da segregação de Interface)|
+|Dependency Inversion Principle - (Princípio da inversão de dependência) |
+|________________________________________________________________________|
+
+Single Responsibility Principle: Significa que uma classe deve ser específica de uma ação, ela não deve realizar outros tipos de 
+ações diferentes da qual ela foi criada, cada classe deve ter apenas uma responsabilidade.
+
+Open/Closed Principle: Classes não devem ser modificadas, elas devem estar aberta apenas para extensão quando outras Classes
+a usam por herança, adicionando novas funcionalidades
+
+Liskov Substitution Principle: Uma classe herdeira, nunca deve substituir a classe pai por completa, se esse for o caso deve-se
+eliminar a classe pai, pois não haveria sentido ter uma interface para a uma classe que já a substitui por completo
+
+Interface Segregation Principle: Não deve ser implementado interfaces que a classe não irá usar, por exemplo se tem uma classe pai
+com dois métodos, as suas derivadas se não forem usar os dois métodos não tem motivo para serem implementados ou seja não
+se deve reaproveitar interfaces para classes que não irão aproveita-la por completo
+
+Dependency Inversion Principle: Módulos de alto nível não devem depender de módulos de baixo nível mas ambos devem depender de 
+abstrações. Abstrações não devem depender de detalhes e detalhe devem depender de abstrações.
