@@ -1,0 +1,23 @@
+"""
+PyMySQL - um cliente MySQL feito em Python Puro
+Doc: https://pymysql.readthedocs.io/en/latest/
+Pypy: https://pypi.org/project/pymysql/
+GitHub: https://github.com/PyMySQL/PyMySQL
+"""
+import pymysql
+# import dotenv
+
+# dotenv.load_dotenv()
+
+connection = pymysql.connect(
+    host='localhost',
+    port=6612,
+    user='usuario',
+    password='senha',
+    database='base_de_dados',
+)
+
+with connection:
+    with connection.cursor() as cursor:
+        # SQL VAI AQUI
+        print(cursor)
