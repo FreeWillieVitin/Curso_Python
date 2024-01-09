@@ -5,6 +5,7 @@ Pypy: https://pypi.org/project/pymysql/
 GitHub: https://github.com/PyMySQL/PyMySQL
 """
 import pymysql
+import pymysql.cursors
 
 # import dotenv
 
@@ -18,6 +19,7 @@ connection = pymysql.connect(
     user='usuario',
     password='senha',
     database='base_de_dados',
+    cursorclass=pymysql.cursors.DictCursor,
 )
 
 with connection:
@@ -31,7 +33,7 @@ with connection:
             'PRIMARY KEY (id)'
             ') '
         )
-        # cursor.execute(f'TRUNCATE TABLE {NOME_TABELA}')
+        cursor.execute(f'TRUNCATE TABLE {NOME_TABELA}')
         print(cursor)
     connection.commit()
     print()
@@ -130,3 +132,59 @@ with connection:
 
         for row in data5:
             print(row)
+    print()
+
+    # Lendo os valores filtrados por where
+
+    # with connection.cursor() as cursor:
+    # escolhe_menor = int(input('Digite um id: '))
+    # escolhe_maior = int(input('Digite um id: '))
+    # sql6 = (
+    #     f'SELECT id, nome from {NOME_TABELA} '
+    #     'where id between %s and %s'
+    # )
+    # cursor.execute(sql6, (escolhe_menor, escolhe_maior))  # type: ignore
+    # # Exibe a consulta passada para o banco de dados
+    # print(cursor.mogrify(sql6, (escolhe_menor, escolhe_maior)))
+
+    # data6 = cursor.fetchall()
+
+    # for row in data6:
+    #     print(row)
+    # print()
+
+    # Realizando Delete com segurança no PyMySQL
+
+    with connection.cursor() as cursor:
+        sql7 = (
+            f'DELETE FROM {NOME_TABELA} WHERE id = %s'
+        )
+        cursor.execute(sql7, (12,))  # type: ignore
+        connection.commit()
+
+        cursor.execute(f'select * from {NOME_TABELA}')
+
+        data7 = cursor.fetchall()
+
+        for row in data7:
+            print(row)
+    print()
+
+    # Realizando Update com segurança no PyMySQL
+
+    with connection.cursor() as cursor:
+        sql7 = (
+            f'UPDATE {NOME_TABELA} '
+            'SET nome = %s, idade= %s '
+            'WHERE id = %s'
+        )
+        cursor.execute(sql7, ('Marcos', 15, 11))  # type: ignore
+        connection.commit()
+
+        cursor.execute(f'select * from {NOME_TABELA}')
+
+        data7 = cursor.fetchall()
+
+        for row in data7:
+            print(row)
+    print()

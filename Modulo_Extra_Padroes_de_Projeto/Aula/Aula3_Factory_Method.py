@@ -8,10 +8,12 @@ from abc import ABC, abstractmethod
 
 class veiculo1(ABC):  # Classe abstrata que chamamos de produto
     @abstractmethod
-    def buscar_cliente1(self) -> None: pass  # Método abstrato
+    def buscar_cliente1(self) -> None:  # Método abstrato
+        pass
 
 
-class CarroLuxo1(veiculo1):  # Classes herdeiras do produto que complementam também os seu método abstrato
+# Classes herdeiras do produto que complementam também os seu método abstrato
+class CarroLuxo1(veiculo1):
     def buscar_cliente1(self) -> None:
         print('Carro de luxo está buscando o cliente...')
 
@@ -40,7 +42,8 @@ class VeiculoFactory1(ABC):
 
     @staticmethod
     @abstractmethod
-    def get_carro1(tipo: str) -> veiculo1:  # type: ignore  # Método abstrato que irá receber as fábricas seguintes
+    # type: ignore  # Método abstrato que irá receber as fábricas seguintes
+    def get_carro1(tipo: str) -> veiculo1:
         ...
 
     def buscar_cliente1(self):
