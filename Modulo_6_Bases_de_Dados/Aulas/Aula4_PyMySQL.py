@@ -4,14 +4,18 @@ Doc: https://pymysql.readthedocs.io/en/latest/
 Pypy: https://pypi.org/project/pymysql/
 GitHub: https://github.com/PyMySQL/PyMySQL
 """
+from tkinter import INSERT
 import pymysql
 import pymysql.cursors
+
+from typing import cast
 
 # import dotenv
 
 # dotenv.load_dotenv()
 
 NOME_TABELA = 'USUARIO'
+CURSOR_ATUAL = pymysql.cursors.DictCursor
 
 connection = pymysql.connect(
     host='localhost',
@@ -179,12 +183,26 @@ with connection:
             'WHERE id = %s'
         )
         cursor.execute(sql7, ('Marcos', 15, 11))  # type: ignore
-        connection.commit()
 
-        cursor.execute(f'select * from {NOME_TABELA}')
+        result = cursor.execute(f'select * from {NOME_TABELA}')
 
         data7 = cursor.fetchall()
 
+        sql8 = (
+            f'INSERT INTO {NOME_TABELA} '
+            '(nome, idade) '
+            'values'
+            '(%s, %s)')
+
+        data8 = ('Gumercinda', 76)
+        cursor.execute(sql8, data8)
+
         for row in data7:
             print(row)
+        print('Valores retornados: ', result)
+        print('Valores retornados: ', len(data7))
+        print('Valores retornados: ', cursor.rowcount)
+        print('Ultimo valor adicionado: ', cursor.lastrowid)
+        print('Número da linha atual: ', cursor.rownumber)
+        connection.commit()
     print()
