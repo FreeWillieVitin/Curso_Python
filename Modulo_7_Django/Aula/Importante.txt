@@ -1,0 +1,2 @@
+Os projetos desenvolvidos usando o framework Django, foram movidos para um novo repositorio para ter mais organização,
+para quem quiser acompanhar meus conhecimentos
