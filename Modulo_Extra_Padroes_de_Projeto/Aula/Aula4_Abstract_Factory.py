@@ -11,7 +11,7 @@ from abc import ABC, abstractmethod
 
 
 # Diferente do modelo anterior, agora dividimos a classe de veículos em duas interfaces para cada modelo de carro, ambas
-# são compostas pelo método buscar_cliente1 porém cada uma tem a sua família de objetos, uma para os veículos de luxo e outra 
+# são compostas pelo método buscar_cliente1 porém cada uma tem a sua família de objetos, uma para os veículos de luxo e outra
 # para os populares
 class veiculoLuxo(ABC):  # Classe abstrata que chamamos de produto
     @abstractmethod

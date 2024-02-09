@@ -4,7 +4,7 @@ Generator = (n for n in range(1000))
 Continuação da Aula 22 do Modulo 1 Estrutura_For Seção iterator
 """
 def generator(n=0): # Seguindo com o generator, conhecemos a palavra chave yield, funciona como o return na função, mas em vez de encerrar a execução dela, o yield retorna um dos valores e pausa
-    yield 1 # Para ser acessado quando a for chamado novamente, nessa função de exemplo temos 3 palavra chave yield, a primeira retorna o valor 1, após isso ela congela e espera a proxima chamada
+    yield 1 # Para ser acessado quando for chamado novamente, nessa função de exemplo temos 3 palavra chave yield, a primeira retorna o valor 1, após isso ela congela e espera a proxima chamada
     print('Continuando...') # A proxima chamda da função continuará de ontem parou ou seja, mostrará o print e o valor 2 que é onde está presente o segundo yield
     yield 2 # Assim por diante até encontrar o fim, que no caso é a palavra chave ja conhecida return
     print('Mais uma...')
