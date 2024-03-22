@@ -73,7 +73,7 @@ class MudaCor(Comando):
 class ControleRemoto:
     def __init__(self) -> None:
         self._botao: Dict[str, Comando] = {}
-        self._desfazer: List[Tuple[str, str]]
+        self._desfazer: List[Tuple[str, str]] = []
 
     def add_botao_comando(self, valor: str, comando: Comando) -> None:
         self._botao[valor] = comando
@@ -90,6 +90,7 @@ class ControleRemoto:
 
     def global_undo(self):
         if not self._desfazer:
+            print('Nada a desfazer')
             return None
 
         nome_botao, acao = self._desfazer[-1]
@@ -126,4 +127,10 @@ if __name__ == "__main__":
     controle.botao_desfaz('Terceiro Botão')
 
     print()
+    controle.global_undo()
+    controle.global_undo()
+    controle.global_undo()
+    controle.global_undo()
+    controle.global_undo()
+    controle.global_undo()
     controle.global_undo()
