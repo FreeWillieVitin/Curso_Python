@@ -37,4 +37,3 @@ if __name__ == "__main__":
     print(HandlerABC('E'))
     print(HandlerABC('F'))
     print(HandlerABC('G'))
-
