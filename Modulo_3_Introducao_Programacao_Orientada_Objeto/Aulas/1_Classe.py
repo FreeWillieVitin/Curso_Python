@@ -49,7 +49,7 @@ class Camera:
         if self.filmando:
             print(f'{self.nome} já está filmando...')
             return
-        
+
         print(f'{self.nome} está filmando...')
         self.filmando = True
 
