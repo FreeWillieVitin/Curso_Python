@@ -35,6 +35,9 @@ class Pessoa(Colleague):
     def broadcast(self, msg: str) -> None:
         self.mediator.mostrar(self, msg)
 
+    def send_direct(self, receiver: str, msg: str) -> None:
+        self.mediator.direto(self, receiver, msg)
+
     def direct(self, msg: str) -> None:
         print(msg)
 
@@ -97,8 +100,11 @@ if __name__ == "__main__":
     chat.add(victor)
     chat.add(Marieli)
     chat.add(Judite)
-    # chat.add(Luiz)
+    chat.add(Luiz)
 
     victor.broadcast('Olá galera')
     Marieli.broadcast('E aí')
-    
+    print()
+
+    victor.send_direct('Marieli', 'Oi amor')
+    Marieli.send_direct('Victor', 'Eu te amo')
